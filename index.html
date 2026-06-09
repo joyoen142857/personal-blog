@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赵鸿燊的个人博客</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #faf9f7; --bg-surface: #f5f3f0; --text-primary: #2d2d2d;
+      --text-secondary: #5a5a5a; --text-muted: #8a8a8a; --accent: #7d9a7d; --accent-light: #e8efe8;
+      --font-serif: "Noto Serif SC", serif; --font-sans: "Noto Sans SC", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: var(--bg-primary); color: var(--text-primary); line-height: 1.8; }
+    h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 500; line-height: 1.4; }
+    a { text-decoration: none; color: inherit; transition: color 0.3s; }
+    a:hover { color: var(--accent); }
+    section { padding: 5rem 1.5rem; max-width: 900px; margin: 0 auto; }
+    @media (min-width: 768px) { section { padding: 6rem 2rem; } }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all 0.3s; }
+    .nav.scrolled { background: rgba(250, 249, 247, 0.95); backdrop-filter: blur(8px); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+    .nav-logo { font-family: var(--font-serif); font-size: 1.125rem; font-weight: 500; }
+    .nav-links { display: none; gap: 2rem; }
+    .nav-links a { font-size: 0.875rem; color: var(--text-secondary); position: relative; }
+    .nav-links a::after { content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-menu-btn { display: block; background: none; border: none; cursor: pointer; padding: 0.5rem; color: var(--text-secondary); }
+    @media (min-width: 768px) { .nav-links { display: flex; } .nav-menu-btn { display: none; } }
+    .nav-mobile { display: none; padding: 0 1.5rem; border-top: 1px solid var(--bg-surface); }
+    .nav-mobile.open { display: block; }
+    .nav-mobile a { display: block; padding: 0.75rem 0; color: var(--text-secondary); }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 5rem; text-align: center; }
+    .hero-welcome { color: var(--accent); font-size: 0.875rem; letter-spacing: 0.05em; margin-bottom: 1rem; opacity: 0; animation: fadeInUp 0.6s forwards; }
+    .hero-title { font-size: 2.5rem; margin-bottom: 1.5rem; white-space: pre-line; opacity: 0; animation: fadeInUp 0.6s 0.1s forwards; }
+    @media (min-width: 768px) { .hero-title { font-size: 3.5rem; } }
+    .hero-subtitle { color: var(--text-secondary); max-width: 32rem; margin: 0 auto 2rem; opacity: 0; animation: fadeInUp 0.6s 0.2s forwards; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--bg-surface); border-radius: 9999px; font-size: 0.875rem; color: var(--text-muted); opacity: 0; animation: fadeInUp 0.6s 0.3s forwards; }
+    .scroll-indicator { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); opacity: 0; animation: fadeIn 0.6s 1s forwards; }
+    .scroll-indicator svg { animation: scrollBounce 1.5s infinite; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes scrollBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+    .section-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
+    .section-icon { color: var(--accent); }
+    .section-title { font-size: 2rem; color: var(--text-primary); }
+    .card { background: var(--bg-surface); padding: 1.5rem; border-radius: 0.5rem; transition: all 0.3s; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+    .card-bg { background: var(--bg-primary); }
+    .about-grid { display: grid; gap: 2rem; }
+    @media (min-width: 768px) { .about-grid { grid-template-columns: repeat(3, 1fr); } }
+    .tag { display: inline-block; padding: 0.25rem 0.75rem; background: var(--bg-primary); border-radius: 9999px; font-size: 0.875rem; color: var(--text-secondary); margin: 0.25rem; }
+    .tag-accent { background: var(--accent-light); color: var(--accent); }
+    .timeline-item { border-left: 2px solid var(--accent); padding-left: 1.5rem; padding-bottom: 2rem; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-title { font-size: 1.25rem; color: var(--text-primary); }
+    .timeline-company { color: var(--text-secondary); }
+    .timeline-period { font-size: 0.875rem; color: var(--accent); margin: 0.5rem 0; }
+    .timeline-desc { color: var(--text-secondary); line-height: 1.7; }
+    .skills-grid { display: grid; gap: 1.5rem; }
+    @media (min-width: 768px) { .skills-grid { grid-template-columns: repeat(3, 1fr); } }
+    .skill-category { font-size: 0.875rem; color: var(--text-primary); margin-bottom: 0.75rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag { padding: 0.25rem 0.5rem; background: var(--bg-surface); border-radius: 0.25rem; font-size: 0.75rem; color: var(--text-secondary); }
+    .list-item { display: flex; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .list-dot { color: var(--accent); flex-shrink: 0; }
+    .list-text { color: var(--text-secondary); }
+    .footer { background: var(--bg-surface); padding: 3rem 1.5rem; text-align: center; }
+    .footer-text { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .footer-note { font-size: 0.75rem; color: var(--text-muted); }
+    .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+    .grain::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1000; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.02; }
+  </style>
+</head>
+<body class="grain">
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">赵鸿燊的博客</a>
+      <div class="nav-links">
+        <a href="#home">首页</a><a href="#about">个人简介</a><a href="#work">工作</a><a href="#study">学习</a><a href="#life">生活</a>
+      </div>
+      <button class="nav-menu-btn" id="navMenuBtn" aria-label="菜单">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#home">首页</a><a href="#about">个人简介</a><a href="#work">工作</a><a href="#study">学习</a><a href="#life">生活</a>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div>
+      <p class="hero-welcome">你好，欢迎来到我的空间</p>
+      <h1 class="hero-title">在这里，记录<br>每一段成长</h1>
+      <p class="hero-subtitle">这是一个素雅简约的个人博客，没有花哨的装饰，只有真诚的文字。用干净的排版、舒适的配色，记录工作、学习与生活的点滴。</p>
+      <div class="hero-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        网站风格：素雅 · 简约 · 耐看
+      </div>
+      <div class="scroll-indicator">
+        <svg width="24" height="40" viewBox="0 0 24 40" fill="none" stroke="rgba(138,138,138,0.5)" stroke-width="2"><rect x="1" y="1" width="22" height="38" rx="11"/><circle cx="12" cy="10" r="3" fill="rgba(138,138,138,0.5)"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-header animate-on-scroll">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <h2 class="section-title">关于我</h2>
+    </div>
+    <div class="about-grid">
+      <div class="card animate-on-scroll">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;">基础信息</h3>
+        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">姓名</span><span style="color:var(--text-secondary);">赵鸿燊</span></div>
+        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">城市</span><span style="color:var(--text-secondary);">济南</span></div>
+        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">职业</span><span style="color:var(--text-secondary);">初中生</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">邮箱</span><span style="color:var(--text-secondary);">61306747@qq.com</span></div>
+      </div>
+      <div class="card animate-on-scroll">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;">性格特点</h3>
+        <div><span class="tag">温和内敛</span><span class="tag">善于思考</span><span class="tag">追求细节</span><span class="tag">持续学习</span></div>
+      </div>
+      <div class="card animate-on-scroll">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;">兴趣爱好</h3>
+        <div><span class="tag tag-accent">阅读</span><span class="tag tag-accent">写作</span><span class="tag tag-accent">摄影</span><span class="tag tag-accent">音乐</span><span class="tag tag-accent">旅行</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="background:var(--bg-surface);">
+    <div class="section-header animate-on-scroll">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      <h2 class="section-title">工作经历</h2>
+    </div>
+    <div style="margin-bottom:3rem;">
+      <div class="timeline-item animate-on-scroll">
+        <h3 class="timeline-title">高级前端工程师 <span style="color:var(--text-muted);font-weight:400;">@</span> <span class="timeline-company">无</span></h3>
+        <p class="timeline-period">2023 - 至今</p>
+        <p class="timeline-desc">负责公司核心产品的前端架构设计与开发，带领 5 人团队完成多个重要项目，推动前端工程化建设，提升团队开发效率。</p>
+      </div>
+      <div class="timeline-item animate-on-scroll">
+        <h3 class="timeline-title">前端工程师 <span style="color:var(--text-muted);font-weight:400;">@</span> <span class="timeline-company">某互联网公司</span></h3>
+        <p class="timeline-period">2020 - 2023</p>
+        <p class="timeline-desc">参与公司电商平台的前端开发，独立完成多个核心模块，优化页面性能，提升用户体验，获得年度优秀员工称号。</p>
+      </div>
+    </div>
+    <h3 style="font-size:1.125rem;margin-bottom:1rem;">职业技能</h3>
+
+    <div class="skills-grid" style="margin-bottom:3rem;">
+      <div class="card card-bg animate-on-scroll">
+        <h4 class="skill-category">技术栈</h4>
+        <div class="skill-tags"><span class="skill-tag">React</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Node.js</span><span class="skill-tag">Vue.js</span><span class="skill-tag">Next.js</span></div>
+      </div>
+      <div class="card card-bg animate-on-scroll">
+        <h4 class="skill-category">工具</h4>
+        <div class="skill-tags"><span class="skill-tag">Git</span><span class="skill-tag">Webpack</span><span class="skill-tag">VS Code</span><span class="skill-tag">Figma</span><span class="skill-tag">Docker</span></div>
+      </div>
+      <div class="card card-bg animate-on-scroll">
+        <h4 class="skill-category">软技能</h4>
+        <div class="skill-tags"><span class="skill-tag">沟通协作</span><span class="skill-tag">项目管理</span><span class="skill-tag">问题分析</span><span class="skill-tag">团队领导</span><span class="skill-tag">技术分享</span></div>
+      </div>
+    </div>
+    <h3 style="font-size:1.125rem;margin-bottom:1rem;">做过的事情</h3>
+    <div>
+      <div class="list-item animate-on-scroll"><svg class="list-dot" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg><p class="list-text">主导完成电商平台重构项目，页面加载速度提升 60%，用户转化率提升 25%</p></div>
+      <div class="list-item animate-on-scroll"><svg class="list-dot" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg><p class="list-text">设计并实现前端组件库，统一团队开发规范，减少重复代码 40%</p></div>
+      <div class="list-item animate-on-scroll"><svg class="list-dot" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg><p class="list-text">建立团队技术分享机制，组织 20+ 场内部分享，提升团队整体技术水平</p></div>
+    </div>
+  </section>
+
+  <section id="study">
+    <div class="section-header animate-on-scroll">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <h2 class="section-title">学习经历</h2>
+    </div>
+    <div class="card animate-on-scroll" style="margin-bottom:3rem;">
+      <h3 class="timeline-title">上海交通大学 <span style="color:var(--text-muted);font-weight:400;">·</span> <span class="timeline-company">计算机科学与技术 / 本科</span></h3>
+      <p class="timeline-period">2016 - 2020</p>
+      <p class="timeline-desc">主修数据结构、算法、操作系统、计算机网络等核心课程。GPA 3.8/4.0，连续三年获得校级奖学金。参与多个校内外项目开发，包括校园二手交易平台、学生信息管理系统等。</p>
+    </div>
+    <div style="display:grid;gap:2rem;">
+      <div class="animate-on-scroll">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;">学习方向</h3>
+        <div class="list-item"><div style="width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:0.5rem;flex-shrink:0;"></div><p class="list-text">前端工程化与性能优化 - 深入研究构建工具、代码分割、懒加载等技术</p></div>
+        <div class="list-item"><div style="width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:0.5rem;flex-shrink:0;"></div><p class="list-text">用户体验设计与交互 - 学习设计原则、交互模式，提升产品可用性</p></div>
+        <div class="list-item"><div style="width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:0.5rem;flex-shrink:0;"></div><p class="list-text">技术管理与团队成长 - 探索技术领导力，学习如何带团队、做规划</p></div>
+      </div>
+      <div class="animate-on-scroll">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;">收获与成长</h3>
+        <div class="list-item"><div style="width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:0.5rem;flex-shrink:0;"></div><p class="list-text">建立了系统的技术知识体系，从碎片化学习转向结构化思考</p></div>
+        <div class="list-item"><div style="width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:0.5rem;flex-shrink:0;"></div><p class="list-text">培养了独立思考和解决问题的能力，不再依赖现成答案</p></div>
+        <div class="list-item"><div style="width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:0.5rem;flex-shrink:0;"></div><p class="list-text">学会了如何高效学习和知识管理，建立个人知识库和笔记系统</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="life" style="background:var(--bg-surface);">
+    <div class="section-header animate-on-scroll">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <h2 class="section-title">生活记录</h2>
+    </div>
+    <div style="display:grid;gap:1.5rem;">
+      <div class="card card-bg animate-on-scroll">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;">日常</h3>
+        <div class="list-item"><span style="color:var(--accent);margin-top:0.25rem;">•</span><p class="list-text">晨跑 5 公里，保持健康的生活节奏，已经坚持了 3 年</p></div>
+        <div class="list-item"><span style="color:var(--accent);margin-top:0.25rem;">•</span><p class="list-text">每天阅读 30 分钟，今年已经读了 25 本书</p></div>
+        <div class="list-item"><span style="color:var(--accent);margin-top:0.25rem;">•</span><p class="list-text">周末下厨，尝试了各国料理，最拿手的是意大利面和日式咖喱</p></div>
+      </div>
+      <div class="card card-bg animate-on-scroll">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;">兴趣</h3>
+        <div class="list-item"><span style="color:var(--accent);margin-top:0.25rem;">•</span><p class="list-text">胶片摄影，收藏了 3 台老式胶片相机，喜欢记录城市街头的瞬间</p></div>
+        <div class="list-item"><span style="color:var(--accent);margin-top:0.25rem;">•</span><p class="list-text">独立音乐，偏爱后摇和爵士，最喜欢的乐队是 Explosions in the Sky</p></div>
+        <div class="list-item"><span style="color:var(--accent);margin-top:0.25rem;">•</span><p class="list-text">手冲咖啡，研究不同产地的风味，家里收藏了 10 多种单品豆</p></div>
+      </div>
+      <div class="card card-bg animate-on-scroll">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;">生活记录</h3>
+        <div class="list-item"><span style="color:var(--accent);margin-top:0.25rem;">•</span><p class="list-text">2024 年独自旅行日本 15 天，从东京到京都，用胶片记录了整个旅程</p></div>
+        <div class="list-item"><span style="color:var(--accent);margin-top:0.25rem;">•</span><p class="list-text">学会了弹吉他，能完整演奏几首曲子，最喜欢的是《天空之城》</p></div>
+        <div class="list-item"><span style="color:var(--accent);margin-top:0.25rem;">•</span><p class="list-text">开始练习书法，每周六下午练字，修身养性，已经写了 50 多页</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-text">© 2026 赵鸿燊的个人博客。All rights reserved.</p>
+    <p class="footer-note">用文字记录生活，用思考沉淀成长</p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+    const menuBtn = document.getElementById('navMenuBtn');
+    const mobileNav = document.getElementById('navMobile');
+    menuBtn.addEventListener('click', () => mobileNav.classList.toggle('open'));
+    mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileNav.classList.remove('open')));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
