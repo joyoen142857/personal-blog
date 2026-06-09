@@ -6,9 +6,9 @@ export const siteConfig = {
   nav: [
     { label: "首页", href: "#home" },
     { label: "个人简介", href: "#about" },
-    { label: "工作", href: "#work" },
-    { label: "学习", href: "#study" },
-    { label: "生活", href: "#life" },
+    { label: "我的关注", href: "#work" },
+    { label: "我的学习", href: "#study" },
+    { label: "我的成长", href: "#life" },
   ],
   
   hero: {
