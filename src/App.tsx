@@ -216,6 +216,42 @@ function Work() {
           <h2 className="font-serif text-3xl text-text-primary">{siteConfig.work.title}</h2>
         </div>
 
+        {/* Article: SpaceX */}
+        <motion.article
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 bg-background p-6 md:p-8 rounded-lg"
+        >
+          <div className="mb-6">
+            <img src="/SpaceX.jpg" alt="SpaceX 火箭" className="w-full rounded-lg shadow-md" />
+          </div>
+          <div className="prose prose-slate max-w-none">
+            <p className="text-text-secondary leading-relaxed mb-4">
+              美国大火箭 SpaceX 即将上市，这次发行肯定会相当火爆，应该是全球投资史上的超级盛宴和历史记录！
+            </p>
+            <p className="text-text-secondary leading-relaxed mb-4">
+              Elon Musk 说，假设有外星物种拜访我们，他们会用一个最客观的指标来评判我们这个文明的发展程度。就是看一个特定文明到底能够驾驭多少能量。俄罗斯物理学家卡尔达舍夫提出了这个概念，我认为这个描述非常准确。一个文明能在多大程度上驾驭其母星的可用能量，这就是 I 型文明；II 型文明是看你驾驭了多少所在恒星的能量；III 型文明则是你能驾驭多少所在星系的能量。这些都是非常客观且可量化的指标。按照目前的状况，我们的文明等级还非常低，如果要算我们驾驭了地球总能量的占比，这个数字微乎其微。我们几乎完全没有驾驭太阳的能量。要感受太阳有多大，有一种方式是将太阳的质量和太阳系中其他所有物质的总质量做个对比。太阳占据了太阳系总质量的绝大部分，它几乎就是一切。在剩下的一点点中，大部分都属于木星这一颗行星。地球的全部质量只能算在微小的其他杂项里，和太阳相比地球就像一粒微尘。投射到地球上的太阳能大约只占太阳输出总功率的十亿分之五，且其中的绝大多数我们也无法利用，因为地球 70% 的表面被水覆盖。甚至在剩下 30% 的陆地中，还有很大一部分是像南极洲、西伯利亚、加拿大北部这样的地区，环境恶劣通常不适合人类居住。
+            </p>
+            <p className="text-text-secondary leading-relaxed mb-4">
+              所以，地球表面可用的太阳能面积很有限，冷却和供电也会成为限制，但在轨道上，太阳能充足散热，可以直接向真空辐射。这样就避免了在地球上建造庞大的发电厂，并解决了散热问题。
+            </p>
+            <p className="text-text-secondary leading-relaxed mb-4">
+              文明从 I 型跨越到 II 型，难度不是一般的大。至于 III 型，我们甚至连从哪儿下手都毫无头绪。但 AI 最终会解决这些问题。
+            </p>
+            <p className="text-text-secondary leading-relaxed mb-4">
+              我们现在的构想以及打算去做的，就是努力在文明等级上攀登，成为一个相对体面的文明。"这样当外星人，希望宇宙中有外星人，最终决定和我们交流时，我们至少已经利用了相当数量的太阳能。这让我们看起来不会显得太过可悲，毕竟目前我们的处境确实有些可悲。"好可爱的发言！
+            </p>
+            <p className="text-text-secondary leading-relaxed">
+              我们平时谈论的历史上的伟大人物，他们都在地面上研究人与人的关系。而马斯克，应该是第一个代表人类向外太空探求的传奇人物。难怪好多人喜欢他、崇拜他！至少很多人是带着些许梦想的，如果有条件还能买点儿他的股票，以后可以光荣的说：
+            </p>
+            <p className="text-text-secondary leading-relaxed font-serif italic mt-4">
+              "我，赞助过马斯克的太空计划！"……
+            </p>
+          </div>
+        </motion.article>
+
         {/* Experiences */}
         <div className="space-y-6 mb-12">
           {siteConfig.work.experiences.map((exp, index) => (
@@ -389,42 +425,6 @@ function Life() {
           <Heart className="text-accent" size={24} />
           <h2 className="font-serif text-3xl text-text-primary">{siteConfig.life.title}</h2>
         </div>
-
-        {/* Article: SpaceX */}
-        <motion.article
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-12 bg-background p-6 md:p-8 rounded-lg"
-        >
-          <div className="mb-6">
-            <img src="/SpaceX.png" alt="SpaceX 火箭" className="w-full rounded-lg shadow-md" />
-          </div>
-          <div className="prose prose-slate max-w-none">
-            <p className="text-text-secondary leading-relaxed mb-4">
-              美国大火箭 SpaceX 即将上市，这次发行肯定会相当火爆，应该是全球投资史上的超级盛宴和历史记录！
-            </p>
-            <p className="text-text-secondary leading-relaxed mb-4">
-              Elon Musk 说，假设有外星物种拜访我们，他们会用一个最客观的指标来评判我们这个文明的发展程度。就是看一个特定文明到底能够驾驭多少能量。俄罗斯物理学家卡尔达舍夫提出了这个概念，我认为这个描述非常准确。一个文明能在多大程度上驾驭其母星的可用能量，这就是 I 型文明；II 型文明是看你驾驭了多少所在恒星的能量；III 型文明则是你能驾驭多少所在星系的能量。这些都是非常客观且可量化的指标。按照目前的状况，我们的文明等级还非常低，如果要算我们驾驭了地球总能量的占比，这个数字微乎其微。我们几乎完全没有驾驭太阳的能量。要感受太阳有多大，有一种方式是将太阳的质量和太阳系中其他所有物质的总质量做个对比。太阳占据了太阳系总质量的绝大部分，它几乎就是一切。在剩下的一点点中，大部分都属于木星这一颗行星。地球的全部质量只能算在微小的其他杂项里，和太阳相比地球就像一粒微尘。投射到地球上的太阳能大约只占太阳输出总功率的十亿分之五，且其中的绝大多数我们也无法利用，因为地球 70% 的表面被水覆盖。甚至在剩下 30% 的陆地中，还有很大一部分是像南极洲、西伯利亚、加拿大北部这样的地区，环境恶劣通常不适合人类居住。
-            </p>
-            <p className="text-text-secondary leading-relaxed mb-4">
-              所以，地球表面可用的太阳能面积很有限，冷却和供电也会成为限制，但在轨道上，太阳能充足散热，可以直接向真空辐射。这样就避免了在地球上建造庞大的发电厂，并解决了散热问题。
-            </p>
-            <p className="text-text-secondary leading-relaxed mb-4">
-              文明从 I 型跨越到 II 型，难度不是一般的大。至于 III 型，我们甚至连从哪儿下手都毫无头绪。但 AI 最终会解决这些问题。
-            </p>
-            <p className="text-text-secondary leading-relaxed mb-4">
-              我们现在的构想以及打算去做的，就是努力在文明等级上攀登，成为一个相对体面的文明。"这样当外星人，希望宇宙中有外星人，最终决定和我们交流时，我们至少已经利用了相当数量的太阳能。这让我们看起来不会显得太过可悲，毕竟目前我们的处境确实有些可悲。"好可爱的发言！
-            </p>
-            <p className="text-text-secondary leading-relaxed">
-              我们平时谈论的历史上的伟大人物，他们都在地面上研究人与人的关系。而马斯克，应该是第一个代表人类向外太空探求的传奇人物。难怪好多人喜欢他、崇拜他！至少很多人是带着些许梦想的，如果有条件还能买点儿他的股票，以后可以光荣的说：
-            </p>
-            <p className="text-text-secondary leading-relaxed font-serif italic mt-4">
-              "我，赞助过马斯克的太空计划！"……
-            </p>
-          </div>
-        </motion.article>
 
         <div className="grid md:grid-cols-3 gap-6">
           {/* Daily */}
