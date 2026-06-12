@@ -140,6 +140,9 @@
     
     <!-- Article: SpaceX -->
     <div class="card card-bg animate-on-scroll" style="margin-bottom:2rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+        <span style="font-size:0.75rem;color:var(--text-muted);">发布日期：<span class="publish-date">2026-06-11</span></span>
+      </div>
       <img src="/SpaceX.jpg" alt="SpaceX 火箭" style="width:100%;border-radius:0.5rem;margin-bottom:1.5rem;" />
       <div style="color:var(--text-secondary);line-height:1.8;">
         <p style="margin-bottom:1rem;">美国大火箭 SpaceX 即将上市，这次发行肯定会相当火爆，应该是全球投资史上的超级盛宴和历史记录！</p>
@@ -184,6 +187,17 @@
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    
+    // 自动显示发布日期
+    document.querySelectorAll('.publish-date').forEach(el => {
+      const date = el.textContent.trim();
+      if (date) {
+        const dateObj = new Date(date);
+        if (!isNaN(dateObj)) {
+          el.textContent = dateObj.toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' });
+        }
+      }
+    });
   </script>
 </body>
 </html>
