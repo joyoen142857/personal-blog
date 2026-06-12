@@ -34,12 +34,12 @@
     .nav-mobile { display: none; padding: 0 1.5rem; border-top: 1px solid var(--bg-surface); }
     .nav-mobile.open { display: block; }
     .nav-mobile a { display: block; padding: 0.75rem 0; color: var(--text-secondary); }
-    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 5rem; text-align: center; }
-    .hero-welcome { color: var(--accent); font-size: 0.875rem; letter-spacing: 0.05em; margin-bottom: 1rem; opacity: 0; animation: fadeInUp 0.6s forwards; }
-    .hero-title { font-size: 2.5rem; margin-bottom: 1.5rem; white-space: pre-line; opacity: 0; animation: fadeInUp 0.6s 0.1s forwards; }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 5rem; text-align: center; background: linear-gradient(135deg, rgba(15,23,42,0.85) 0%, rgba(30,58,138,0.75) 50%, rgba(15,23,42,0.9) 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') center/cover no-repeat fixed; }
+    .hero-welcome { color: #93c5fd; font-size: 0.875rem; letter-spacing: 0.05em; margin-bottom: 1rem; opacity: 0; animation: fadeInUp 0.6s forwards; }
+    .hero-title { font-size: 2.5rem; margin-bottom: 1.5rem; white-space: pre-line; color: #ffffff; opacity: 0; animation: fadeInUp 0.6s 0.1s forwards; }
     @media (min-width: 768px) { .hero-title { font-size: 3.5rem; } }
-    .hero-subtitle { color: var(--text-secondary); max-width: 32rem; margin: 0 auto 2rem; opacity: 0; animation: fadeInUp 0.6s 0.2s forwards; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--bg-surface); border-radius: 9999px; font-size: 0.875rem; color: var(--text-muted); opacity: 0; animation: fadeInUp 0.6s 0.3s forwards; }
+    .hero-subtitle { color: #cbd5e1; max-width: 32rem; margin: 0 auto 2rem; opacity: 0; animation: fadeInUp 0.6s 0.2s forwards; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border-radius: 9999px; font-size: 0.875rem; color: #e2e8f0; opacity: 0; animation: fadeInUp 0.6s 0.3s forwards; }
     .scroll-indicator { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); opacity: 0; animation: fadeIn 0.6s 1s forwards; }
     .scroll-indicator svg { animation: scrollBounce 1.5s infinite; }
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
