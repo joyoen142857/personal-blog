@@ -340,6 +340,24 @@ function Study() {
           <h2 className="font-serif text-3xl text-text-primary">{siteConfig.study.title}</h2>
         </div>
 
+        {/* Learning Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
+          <h3 className="font-serif text-xl text-text-primary mb-4">学习瞬间</h3>
+          <div className="bg-surface p-6 rounded-lg">
+            <img
+              src="/1.jpg"
+              alt="学习图片"
+              className="w-full rounded-lg shadow-md"
+            />
+          </div>
+        </motion.div>
+
         {/* Education */}
         <div className="space-y-6 mb-12">
           {siteConfig.study.education.map((edu, index) => (
