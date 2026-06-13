@@ -426,6 +426,27 @@ function Life() {
           <h2 className="font-serif text-3xl text-text-primary">{siteConfig.life.title}</h2>
         </div>
 
+        {/* Video Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
+          <h3 className="font-serif text-xl text-text-primary mb-4">成长视频</h3>
+          <div className="bg-background p-6 rounded-lg">
+            <video
+              controls
+              className="w-full rounded-lg shadow-md"
+              poster=""
+            >
+              <source src="/7b011e6b800b8632d2efcf48e70a243e.mp4" type="video/mp4" />
+              您的浏览器不支持视频播放。
+            </video>
+          </div>
+        </motion.div>
+
         <div className="grid md:grid-cols-3 gap-6">
           {/* Daily */}
           <div className="bg-background p-6 rounded-lg">
