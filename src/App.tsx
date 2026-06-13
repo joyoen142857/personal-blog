@@ -351,7 +351,7 @@ function Study() {
           <h3 className="font-serif text-xl text-text-primary mb-4">学习瞬间</h3>
           <div className="bg-surface p-6 rounded-lg">
             <img
-              src="/1.jpg"
+              src="/learning.jpg"
               alt="学习图片"
               className="w-full rounded-lg shadow-md"
             />
