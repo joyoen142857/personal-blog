@@ -340,6 +340,36 @@ function Study() {
           <h2 className="font-serif text-3xl text-text-primary">{siteConfig.study.title}</h2>
         </div>
 
+        {/* Article: 我家养了两只猫 */}
+        <motion.article
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 bg-background p-6 md:p-8 rounded-lg"
+        >
+          <div className="mb-6">
+            <img src="/learning.jpg" alt="学习瞬间" className="w-full rounded-lg shadow-md" />
+          </div>
+          <div className="prose prose-slate max-w-none">
+            <p className="text-text-secondary leading-relaxed mb-4">
+              我家养了两只猫，一只八岁，
+            </p>
+            <p className="text-text-secondary leading-relaxed mb-4">
+              另一只刚满一岁。
+            </p>
+            <p className="text-text-secondary leading-relaxed mb-4">
+              最近，我家又养了一只龙虾（OpenClaw），
+            </p>
+            <p className="text-text-secondary leading-relaxed mb-4">
+              虽然还没满月，但它已经能帮我干活儿了。
+            </p>
+            <p className="text-text-secondary leading-relaxed font-serif italic">
+              这不，我的网站就是它给我搞定的！
+            </p>
+          </div>
+        </motion.article>
+
         {/* Learning Image */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
