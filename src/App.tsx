@@ -340,7 +340,7 @@ function Study() {
           <h2 className="font-serif text-3xl text-text-primary">{siteConfig.study.title}</h2>
         </div>
 
-        {/* Article: 我家养了两只猫 */}
+        {/* Article: 我的 OpenClaw */}
         <motion.article
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
