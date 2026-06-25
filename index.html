@@ -1,222 +1,199 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>赵鸿燊的博客</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.7;
-            color: #4a4a4a;
-            background: linear-gradient(135deg, #fdf6ec 0%, #fef9f3 100%);
-            min-height: 100vh;
-        }
-        
-        /* 导航栏 */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(217, 119, 6, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-        }
-        .logo {
-            font-size: 1.4em;
-            font-weight: 600;
-            color: #d97706;
-            text-decoration: none;
-            letter-spacing: 1px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-        .nav-links a {
-            color: #6b7280;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 6px;
-        }
-        .nav-links a:hover, .nav-links a.active {
-            color: #d97706;
-            background: rgba(217, 119, 6, 0.08);
-        }
-        
-        /* 主容器 */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 30px;
-        }
-        
-        /* 个人介绍 */
-        .intro-section {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(217, 119, 6, 0.08);
-            border: 1px solid rgba(217, 119, 6, 0.1);
-        }
-        .intro-section h2 {
-            color: #d97706;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .intro-section h2::before {
-            content: '👋';
-        }
-        .intro-content {
-            color: #6b7280;
-            line-height: 1.8;
-        }
-        
-        /* 博客文章 */
-        .section-title {
-            color: #d97706;
-            margin-bottom: 25px;
-            font-size: 1.4em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-title::before {
-            content: '';
-            width: 4px;
-            height: 24px;
-            background: linear-gradient(180deg, #d97706, #fbbf24);
-            border-radius: 2px;
-        }
-        
-        .post {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.06);
-            border: 1px solid rgba(217, 119, 6, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .post:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.12);
-        }
-        .post h3 {
-            color: #78350f;
-            margin-bottom: 12px;
-            font-size: 1.3em;
-        }
-        .post-date {
-            color: #d4a76a;
-            font-size: 0.85em;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .post-date::before {
-            content: '📅';
-        }
-        .post-content {
-            color: #6b7280;
-            line-height: 1.9;
-            white-space: pre-line;
-        }
-        
-        /* 页脚 */
-        footer {
-            text-align: center;
-            padding: 40px 30px;
-            color: #9ca3af;
-            font-size: 0.9em;
-            border-top: 1px solid rgba(217, 119, 6, 0.1);
-            margin-top: 50px;
-            background: rgba(255, 255, 255, 0.5);
-        }
-        
-        /* 响应式 */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .container {
-                padding: 20px;
-            }
-            .intro-section, .post {
-                padding: 25px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赵鸿燊的个人博客</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #faf9f7; --bg-surface: #f5f3f0; --text-primary: #2d2d2d;
+      --text-secondary: #5a5a5a; --text-muted: #8a8a8a; --accent: #7d9a7d; --accent-light: #e8efe8;
+      --font-serif: "Noto Serif SC", serif; --font-sans: "Noto Sans SC", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); background: var(--bg-primary); color: var(--text-primary); line-height: 1.8; }
+    h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 500; line-height: 1.4; }
+    a { text-decoration: none; color: inherit; transition: color 0.3s; }
+    a:hover { color: var(--accent); }
+    section { padding: 5rem 1.5rem; max-width: 900px; margin: 0 auto; }
+    @media (min-width: 768px) { section { padding: 6rem 2rem; } }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: all 0.3s; }
+    .nav.scrolled { background: rgba(250, 249, 247, 0.95); backdrop-filter: blur(8px); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+    .nav-logo { font-family: var(--font-serif); font-size: 1.125rem; font-weight: 500; }
+    .nav-links { display: none; gap: 2rem; }
+    .nav-links a { font-size: 0.875rem; color: var(--text-secondary); position: relative; }
+    .nav-links a::after { content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-menu-btn { display: block; background: none; border: none; cursor: pointer; padding: 0.5rem; color: var(--text-secondary); }
+    @media (min-width: 768px) { .nav-links { display: flex; } .nav-menu-btn { display: none; } }
+    .nav-mobile { display: none; padding: 0 1.5rem; border-top: 1px solid var(--bg-surface); }
+    .nav-mobile.open { display: block; }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 5rem; text-align: center; }
+    .hero-welcome { color: var(--accent); font-size: 0.875rem; letter-spacing: 0.05em; margin-bottom: 1rem; opacity: 0; animation: fadeInUp 0.6s forwards; }
+    .hero-title { font-size: 2.5rem; margin-bottom: 1.5rem; white-space: pre-line; opacity: 0; animation: fadeInUp 0.6s 0.1s forwards; }
+    @media (min-width: 768px) { .hero-title { font-size: 3.5rem; } }
+    .hero-subtitle { color: var(--text-secondary); max-width: 32rem; margin: 0 auto 2rem; opacity: 0; animation: fadeInUp 0.6s 0.2s forwards; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--bg-surface); border-radius: 9999px; font-size: 0.875rem; color: var(--text-muted); opacity: 0; animation: fadeInUp 0.6s 0.3s forwards; }
+    .scroll-indicator { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); opacity: 0; animation: fadeIn 0.6s 1s forwards; }
+    .scroll-indicator svg { animation: scrollBounce 1.5s infinite; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes scrollBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+    .section-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
+    .section-icon { color: var(--accent); }
+    .section-title { font-size: 2rem; color: var(--text-primary); }
+    .card { background: var(--bg-surface); padding: 1.5rem; border-radius: 0.5rem; transition: all 0.3s; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+    .card-bg { background: var(--bg-primary); }
+    .about-grid { display: grid; gap: 2rem; }
+    @media (min-width: 768px) { .about-grid { grid-template-columns: repeat(3, 1fr); } }
+    .tag { display: inline-block; padding: 0.25rem 0.75rem; background: var(--bg-primary); border-radius: 9999px; font-size: 0.875rem; color: var(--text-secondary); margin: 0.25rem; }
+    .tag-accent { background: var(--accent-light); color: var(--accent); }
+    .timeline-item { border-left: 2px solid var(--accent); padding-left: 1.5rem; padding-bottom: 2rem; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-title { font-size: 1.25rem; color: var(--text-primary); }
+    .timeline-company { color: var(--text-secondary); }
+    .timeline-period { font-size: 0.875rem; color: var(--accent); margin: 0.5rem 0; }
+    .timeline-desc { color: var(--text-secondary); line-height: 1.7; }
+    .skills-grid { display: grid; gap: 1.5rem; }
+    @media (min-width: 768px) { .skills-grid { grid-template-columns: repeat(3, 1fr); } }
+    .skill-category { font-size: 0.875rem; color: var(--text-primary); margin-bottom: 0.75rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag { padding: 0.25rem 0.5rem; background: var(--bg-surface); border-radius: 0.25rem; font-size: 0.75rem; color: var(--text-secondary); }
+    .list-item { display: flex; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .list-dot { color: var(--accent); flex-shrink: 0; }
+    .list-text { color: var(--text-secondary); }
+    .footer { background: var(--bg-surface); padding: 3rem 1.5rem; text-align: center; }
+    .footer-text { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .footer-note { font-size: 0.75rem; color: var(--text-muted); }
+    .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+    .grain::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1000; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.02; }
+  </style>
 </head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">赵鸿燊的博客</a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">首页</a></li>
-                <li><a href="following.html">我的关注</a></li>
-                <li><a href="learning.html">我的学习</a></li>
-                <li><a href="growth.html">我的成长</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-        <section class="intro-section">
-            <h2>关于我</h2>
-            <div class="intro-content">
-                <p>你好，我是赵鸿燊。欢迎来到我的个人空间。</p>
-                <br>
-                <p>这里记录着我的思考、学习与成长轨迹。我相信智能终将会像电力一样廉价，但思考和理解永远无法外包。在这个 AI 快速发展的时代，我致力于培养能够驾驭、引领 AI 的深层智慧。</p>
-                <br>
-                <p>期待与你一起探索、学习、成长。</p>
-            </div>
-        </section>
-
-        <h2 class="section-title">最新文章</h2>
-        
-        <article class="post">
-            <h3>最后一代需要找工作的人</h3>
-            <p class="post-date">2026 年 6 月 22 日</p>
-            <div class="post-content">最近，一位诺奖美国科学家在斯坦福演讲：
-00 后可能是最后一代需要找工作的人！
-
-那像我这样的壹零后呢？
-
-智能是人类赋予 AI 的能力，用以解放生产力。
-未来的我们，更需要通过学习与创造，
-培养出能够驾驭、引领 AI 的深层智慧。
-
-智能终将会像电力一样廉价，
-但思考和理解永远无法外包！</div>
-        </article>
+<body class="grain">
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">赵鸿燊的博客</a>
+      <div class="nav-links">
+        <a href="#home">首页</a><a href="#about">个人简介</a><a href="#work">我的关注</a><a href="#study">我的学习</a><a href="#life">我的成长</a>
+      </div>
+      <button class="nav-menu-btn" id="navMenuBtn" aria-label="菜单">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#home">首页</a><a href="#about">个人简介</a><a href="#work">我的关注</a><a href="#study">我的学习</a><a href="#life">我的成长</a>
+    </div>
+  </nav>
 
-    <footer>
-        <p>&copy; 2026 赵鸿燊 · Powered by GitHub Pages</p>
-    </footer>
+  <section id="home" class="hero">
+    <div>
+      <p class="hero-welcome">你好，欢迎来到我的空间</p>
+      <h1 class="hero-title">在这里，记录<br>每一段成长</h1>
+      <p class="hero-subtitle">独立之精神，自由之思想</p>
+      <div class="hero-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <div class="scroll-indicator">
+        <svg width="24" height="40" viewBox="0 0 24 40" fill="none" stroke="rgba(138,138,138,0.5)" stroke-width="2"><rect x="1" y="1" width="22" height="38" rx="11"/><circle cx="12" cy="10" r="3" fill="rgba(138,138,138,0.5)"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-header animate-on-scroll">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <h2 class="section-title">关于我</h2>
+    </div>
+    <div class="about-grid">
+      <div class="card animate-on-scroll">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;">基础信息</h3>
+        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">姓名</span><span style="color:var(--text-secondary);">赵鸿燊</span></div>
+        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">城市</span><span style="color:var(--text-secondary);">济南</span></div>
+        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">职业</span><span style="color:var(--text-secondary);">初中生</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">邮箱</span><span style="color:var(--text-secondary);">61306747@qq.com</span></div>
+      </div>
+      <div class="card animate-on-scroll">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;">性格特点</h3>
+        <div><span class="tag">温和内敛</span><span class="tag">善于思考</span><span class="tag">追求细节</span><span class="tag">持续学习</span></div>
+      </div>
+      <div class="card animate-on-scroll">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;">兴趣爱好</h3>
+        <div><span class="tag tag-accent">阅读</span><span class="tag tag-accent">写作</span><span class="tag tag-accent">摄影</span><span class="tag tag-accent">音乐</span><span class="tag tag-accent">旅行</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="background:var(--bg-surface);">
+    <div class="section-header animate-on-scroll">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      <h2 class="section-title">我的关注</h2>
+    </div>
+    
+    <div class="card card-bg animate-on-scroll" style="margin-bottom:2rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-11</span>
+      </div>
+      <img src="SpaceX.jpg" alt="SpaceX 火箭" style="width:100%;border-radius:0.5rem;margin-bottom:1.5rem;" />
+      <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:1rem;">图片发布时间：2026-06-11</p>
+      <div style="color:var(--text-secondary);line-height:1.8;">
+        <p style="margin-bottom:1rem;">美国大火箭 SpaceX 即将上市，这次发行肯定会相当火爆，应该是全球投资史上的超级盛宴和历史记录！</p>
+        <p style="margin-bottom:1rem;">Elon Musk 说，假设有外星物种拜访我们，他们会用一个最客观的指标来评判我们这个文明的发展程度。就是看一个特定文明到底能够驾驭多少能量。俄罗斯物理学家卡尔达舍夫提出了这个概念，我认为这个描述非常准确。一个文明能在多大程度上驾驭其母星的可用能量，这就是 I 型文明；II 型文明是看你驾驭了多少所在恒星的能量；III 型文明则是你能驾驭多少所在星系的能量。这些都是非常客观且可量化的指标。按照目前的状况，我们的文明等级还非常低，如果要算我们驾驭了地球总能量的占比，这个数字微乎其微。我们几乎完全没有驾驭太阳的能量。要感受太阳有多大，有一种方式是将太阳的质量和太阳系中其他所有物质的总质量做个对比。太阳占据了太阳系总质量的绝大部分，它几乎就是一切。在剩下的一点点中，大部分都属于木星这一颗行星。地球的全部质量只能算在微小的其他杂项里，和太阳相比地球就像一粒微尘。投射到地球上的太阳能大约只占太阳输出总功率的十亿分之五，且其中的绝大多数我们也无法利用，因为地球 70% 的表面被水覆盖。甚至在剩下 30% 的陆地中，还有很大一部分是像南极洲、西伯利亚、加拿大北部这样的地区，环境恶劣通常不适合人类居住。</p>
+        <p style="margin-bottom:1rem;">所以，地球表面可用的太阳能面积很有限，冷却和供电也会成为限制，但在轨道上，太阳能充足散热，可以直接向真空辐射。这样就避免了在地球上建造庞大的发电厂，并解决了散热问题。</p>
+        <p style="margin-bottom:1rem;">文明从 I 型跨越到 II 型，难度不是一般的大。至于 III 型，我们甚至连从哪儿下手都毫无头绪。但 AI 最终会解决这些问题。</p>
+        <p style="margin-bottom:1rem;">我们现在的构想以及打算去做的，就是努力在文明等级上攀登，成为一个相对体面的文明。"这样当外星人，希望宇宙中有外星人，最终决定和我们交流时，我们至少已经利用了相当数量的太阳能。这让我们看起来不会显得太过可悲，毕竟目前我们的处境确实有些可悲。"好可爱的发言！</p>
+        <p style="margin-bottom:1rem;">我们平时谈论的历史上的伟大人物，他们都在地面上研究人与人的关系。而马斯克，应该是第一个代表人类向外太空探求的传奇人物。难怪好多人喜欢他、崇拜他！至少很多人是带着些许梦想的，如果有条件还能买点儿他的股票，以后可以光荣的说：</p>
+        <p style="font-style:italic;margin-top:1rem;">"我，赞助过马斯克的太空计划！"……</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="study">
+    <div class="section-header animate-on-scroll">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <h2 class="section-title">我的学习</h2>
+    </div>
+    
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
+        <h3 class="section-title" style="font-size:1.5rem;">我的 OpenClaw</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-17</span>
+      </div>
+      <p class="timeline-desc" style="margin-bottom:1rem;">我家养了两只猫，一只八岁，另一只刚满一岁。</p>
+      <p class="timeline-desc" style="margin-bottom:1rem;">最近，我家又养了一只龙虾（OpenClaw），虽然还没满月，但它已经能帮我干活儿了。</p>
+      <p class="timeline-desc">这不，我的网站就是它给我搞定的！</p>
+    </article>
+  </section>
+
+  <section id="life" style="background:var(--bg-surface);">
+    <div class="section-header animate-on-scroll">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <h2 class="section-title">我的成长</h2>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-text">© 2026 赵鸿燊的个人博客。All rights reserved.</p>
+    <p class="footer-note">用文字记录生活，用思考沉淀成长</p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+    const menuBtn = document.getElementById('navMenuBtn');
+    const mobileNav = document.getElementById('navMobile');
+    menuBtn.addEventListener('click', () => mobileNav.classList.toggle('open'));
+    mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileNav.classList.remove('open')));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
