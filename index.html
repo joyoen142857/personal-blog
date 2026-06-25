@@ -3,63 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>赵娟的博客</title>
+    <title>赵鸿燊的博客</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-            padding: 20px;
+            line-height: 1.7;
+            color: #4a4a4a;
+            background: linear-gradient(135deg, #fdf6ec 0%, #fef9f3 100%);
+            min-height: 100vh;
         }
-        .container {
-            max-width: 800px;
+        
+        /* 导航栏 */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(217, 119, 6, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1000px;
             margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
         }
-        header {
-            text-align: center;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #eee;
-            margin-bottom: 30px;
+        .logo {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #d97706;
+            text-decoration: none;
+            letter-spacing: 1px;
         }
-        h1 { color: #2c3e50; margin-bottom: 10px; }
-        .subtitle { color: #7f8c8d; font-size: 0.9em; }
-        .post {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #fafafa;
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #6b7280;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
             border-radius: 6px;
-            border-left: 4px solid #3498db;
         }
-        .post h2 { color: #2c3e50; margin-bottom: 15px; }
-        .post-date { color: #95a5a6; font-size: 0.85em; margin-bottom: 10px; }
-        .post-content { color: #555; white-space: pre-line; }
+        .nav-links a:hover, .nav-links a.active {
+            color: #d97706;
+            background: rgba(217, 119, 6, 0.08);
+        }
+        
+        /* 主容器 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+        
+        /* 个人介绍 */
+        .intro-section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(217, 119, 6, 0.08);
+            border: 1px solid rgba(217, 119, 6, 0.1);
+        }
+        .intro-section h2 {
+            color: #d97706;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .intro-section h2::before {
+            content: '👋';
+        }
+        .intro-content {
+            color: #6b7280;
+            line-height: 1.8;
+        }
+        
+        /* 博客文章 */
+        .section-title {
+            color: #d97706;
+            margin-bottom: 25px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, #d97706, #fbbf24);
+            border-radius: 2px;
+        }
+        
+        .post {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.06);
+            border: 1px solid rgba(217, 119, 6, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .post:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.12);
+        }
+        .post h3 {
+            color: #78350f;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        .post-date {
+            color: #d4a76a;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .post-date::before {
+            content: '📅';
+        }
+        .post-content {
+            color: #6b7280;
+            line-height: 1.9;
+            white-space: pre-line;
+        }
+        
+        /* 页脚 */
         footer {
             text-align: center;
-            padding-top: 30px;
-            border-top: 2px solid #eee;
-            color: #7f8c8d;
+            padding: 40px 30px;
+            color: #9ca3af;
             font-size: 0.9em;
+            border-top: 1px solid rgba(217, 119, 6, 0.1);
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .container {
+                padding: 20px;
+            }
+            .intro-section, .post {
+                padding: 25px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>赵娟的博客</h1>
-            <p class="subtitle">思考 · 学习 · 创造</p>
-        </header>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">赵鸿燊的博客</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="following.html">我的关注</a></li>
+                <li><a href="learning.html">我的学习</a></li>
+                <li><a href="growth.html">我的成长</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <main>
-            <article class="post">
-                <h2>最后一代需要找工作的人</h2>
-                <p class="post-date">2026 年 6 月 22 日</p>
-                <div class="post-content">最近，一位诺奖美国科学家在斯坦福演讲：
+    <div class="container">
+        <section class="intro-section">
+            <h2>关于我</h2>
+            <div class="intro-content">
+                <p>你好，我是赵鸿燊。欢迎来到我的个人空间。</p>
+                <br>
+                <p>这里记录着我的思考、学习与成长轨迹。我相信智能终将会像电力一样廉价，但思考和理解永远无法外包。在这个 AI 快速发展的时代，我致力于培养能够驾驭、引领 AI 的深层智慧。</p>
+                <br>
+                <p>期待与你一起探索、学习、成长。</p>
+            </div>
+        </section>
+
+        <h2 class="section-title">最新文章</h2>
+        
+        <article class="post">
+            <h3>最后一代需要找工作的人</h3>
+            <p class="post-date">2026 年 6 月 22 日</p>
+            <div class="post-content">最近，一位诺奖美国科学家在斯坦福演讲：
 00 后可能是最后一代需要找工作的人！
 
 那像我这样的壹零后呢？
@@ -70,12 +212,11 @@
 
 智能终将会像电力一样廉价，
 但思考和理解永远无法外包！</div>
-            </article>
-        </main>
-
-        <footer>
-            <p>&copy; 2026 赵娟 · Powered by GitHub Pages</p>
-        </footer>
+        </article>
     </div>
+
+    <footer>
+        <p>&copy; 2026 赵鸿燊 · Powered by GitHub Pages</p>
+    </footer>
 </body>
 </html>
