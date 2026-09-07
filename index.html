@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="zh-CN" data-page-node-id="NjykAPcE1s3SDLvBH0X5KL">
+<head data-page-node-id="6YdKpKpkyUOYXXC07aYPZp">
+  <meta charset="UTF-8" data-page-node-id="SqEl9WD2RYy0bnpJjB0pfn">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="dlDA9XFiWDfYU8z39sQnq9">
   <title>赵鸿燊的个人博客</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" data-page-node-id="H6dfZcNXphgWgjz3iU1Sf3">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin data-page-node-id="I0ClbZsd275itVmE0KJF9P">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@300;400;500;700&display=swap" rel="stylesheet" data-page-node-id="DVCkHHLrjNMs3qC897B0Fg">
   <style>
     :root {
       --bg-primary: #faf9f7; --bg-surface: #f5f3f0; --text-primary: #2d2d2d;
@@ -33,7 +33,10 @@
     @media (min-width: 768px) { .nav-links { display: flex; } .nav-menu-btn { display: none; } }
     .nav-mobile { display: none; padding: 0 1.5rem; border-top: 1px solid var(--bg-surface); }
     .nav-mobile.open { display: block; }
-    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 5rem; text-align: center; }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 5rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: url("images/blog-cover-tech-student-teslabot.jpg") center center / cover no-repeat; z-index: 0; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(250,249,247,0.62) 0%, rgba(250,249,247,0.48) 45%, rgba(250,249,247,0.68) 100%); z-index: 1; }
+    .hero > div { position: relative; z-index: 2; }
     .hero-welcome { color: var(--accent); font-size: 0.875rem; letter-spacing: 0.05em; margin-bottom: 1rem; opacity: 0; animation: fadeInUp 0.6s forwards; }
     .hero-title { font-size: 2.5rem; margin-bottom: 1.5rem; white-space: pre-line; opacity: 0; animation: fadeInUp 0.6s 0.1s forwards; }
     @media (min-width: 768px) { .hero-title { font-size: 3.5rem; } }
@@ -76,283 +79,283 @@
     .grain::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1000; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.02; }
   </style>
 </head>
-<body class="grain">
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#home" class="nav-logo">赵鸿燊的博客</a>
-      <div class="nav-links">
-        <a href="#home">首页</a><a href="#about">个人简介</a><a href="#work">我的关注</a><a href="#study">我的学习</a><a href="#life">我的成长</a>
+<body class="grain" data-page-node-id="6zr81idOvuzaNbyPHOaWvk">
+  <nav class="nav" id="nav" data-page-node-id="HQoYZANVhMFKhSGekpcjgA">
+    <div class="nav-inner" data-page-node-id="L7wpsS02nLvvW4fBYq81IJ">
+      <a href="#home" class="nav-logo" data-page-node-id="APy7C0dCItEidJZciINyCC">赵鸿燊的博客</a>
+      <div class="nav-links" data-page-node-id="1nHrpVET7pyzUuhTLzemuq">
+        <a href="#home" data-page-node-id="QLkR439MrmkGtFXX7dBTAZ">首页</a><a href="#about" data-page-node-id="RETOeFkdHNZfgTM7l2apdZ">个人简介</a><a href="#work" data-page-node-id="I9x7CMyHbp9sq68HoJpxb9">我的关注</a><a href="#study" data-page-node-id="dQvm4wgLFYKsl6NpGQNKOC">我的学习</a><a href="#life" data-page-node-id="MUv2pnPBss9uujD9W4bK42">我的成长</a>
       </div>
-      <button class="nav-menu-btn" id="navMenuBtn" aria-label="菜单">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <button class="nav-menu-btn" id="navMenuBtn" aria-label="菜单" data-page-node-id="Jc7WV0UtfCaqrLEIJj2bgf">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-page-node-id="EcBV989sXozPxZvB9K3izW"><line x1="3" y1="6" x2="21" y2="6" data-page-node-id="tjtbIF4AkXGYCMUVGS5ixb"/><line x1="3" y1="12" x2="21" y2="12" data-page-node-id="F6BcwEH9MAAcSZPHaMZojK"/><line x1="3" y1="18" x2="21" y2="18" data-page-node-id="POjhSznLzzM3HC6GLoLxQE"/></svg>
       </button>
     </div>
-    <div class="nav-mobile" id="navMobile">
-      <a href="#home">首页</a><a href="#about">个人简介</a><a href="#work">我的关注</a><a href="#study">我的学习</a><a href="#life">我的成长</a>
+    <div class="nav-mobile" id="navMobile" data-page-node-id="5h1VJbS9jxl4hChDPJ9UAO">
+      <a href="#home" data-page-node-id="Fex2amLpjQi40Fiw9iBCq6">首页</a><a href="#about" data-page-node-id="Kpm2MNhow8jCcVpNSTLi0t">个人简介</a><a href="#work" data-page-node-id="VfPcIAEtGBPUD32oF2AKXs">我的关注</a><a href="#study" data-page-node-id="Ak109MnaaRGFcyXXX9VFax">我的学习</a><a href="#life" data-page-node-id="NBQ3SOGtc5Z5APXIkVubUl">我的成长</a>
     </div>
   </nav>
 
-  <section id="home" class="hero">
-    <div>
-      <p class="hero-welcome">您好，欢迎来到我的空间</p>
-      <h1 class="hero-title">在这里，记录<br>每一段成长</h1>
-      <p class="hero-subtitle">独立之精神，自由之思想</p>
-      <div class="hero-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+  <section id="home" class="hero" data-page-node-id="hY3EqS6zoS5UfRFDbVFDSE">
+    <div data-page-node-id="uKIxFJywUcyiSwUdJBN4Br">
+      <p class="hero-welcome" data-page-node-id="GkQMImBF9VHnIpqNLWq294">您好，欢迎来到我的空间</p>
+      <h1 class="hero-title" data-page-node-id="9k8cYMcFY87SeJ507zYHwh">在这里，记录<br data-page-node-id="4sGjHhjJrRZvZUvCGig6Ja">每一段成长</h1>
+      <p class="hero-subtitle" data-page-node-id="FLOvEKFaxiaeeHiyV4rCwg">独立之精神，自由之思想</p>
+      <div class="hero-badge" data-page-node-id="GmcCfJ1IY8EyGCtRFxuEIA">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-page-node-id="m0jUYNjPXRBHSdqifMVdH0"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" data-page-node-id="ReqAXBZYLAzPQsSSmTuSg0"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" data-page-node-id="ypxTSbAiNMt2f9FHmfp3Oo"/></svg>
       </div>
-      <div class="scroll-indicator">
-        <svg width="24" height="40" viewBox="0 0 24 40" fill="none" stroke="rgba(138,138,138,0.5)" stroke-width="2"><rect x="1" y="1" width="22" height="38" rx="11"/><circle cx="12" cy="10" r="3" fill="rgba(138,138,138,0.5)"/></svg>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="section-header animate-on-scroll">
-      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <h2 class="section-title">关于我</h2>
-    </div>
-    <div class="about-grid">
-      <div class="card animate-on-scroll">
-        <h3 style="font-size:1.125rem;margin-bottom:1rem;">基础信息</h3>
-        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">姓名</span><span style="color:var(--text-secondary);">赵鸿燊</span></div>
-        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">城市</span><span style="color:var(--text-secondary);">济南</span></div>
-        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">职业</span><span style="color:var(--text-secondary);">初中生</span></div>
-        <div style="display:flex;justify-content:space-between;font-size:0.875rem;"><span style="color:var(--text-muted);">邮箱</span><span style="color:var(--text-secondary);">61306747@qq.com</span></div>
-      </div>
-      <div class="card animate-on-scroll">
-        <h3 style="font-size:1.125rem;margin-bottom:1rem;">性格特点</h3>
-        <div><span class="tag">温和内敛</span><span class="tag">善于思考</span><span class="tag">追求细节</span><span class="tag">持续学习</span></div>
-      </div>
-      <div class="card animate-on-scroll">
-        <h3 style="font-size:1.125rem;margin-bottom:1rem;">兴趣爱好</h3>
-        <div><span class="tag tag-accent">阅读</span><span class="tag tag-accent">篮球</span><span class="tag tag-accent">宠物</span><span class="tag tag-accent">科幻</span><span class="tag tag-accent">旅行</span></div>
+      <div class="scroll-indicator" data-page-node-id="gpOi0YLOQT0q61sgnHJ1Ci">
+        <svg width="24" height="40" viewBox="0 0 24 40" fill="none" stroke="rgba(138,138,138,0.5)" stroke-width="2" data-page-node-id="yUUSLyT0ICsfO4gjh4rnQz"><rect x="1" y="1" width="22" height="38" rx="11" data-page-node-id="TztPqof9BfjZXdEL7Db011"/><circle cx="12" cy="10" r="3" fill="rgba(138,138,138,0.5)" data-page-node-id="h4q0uUONSHLe276EQGi0q3"/></svg>
       </div>
     </div>
   </section>
 
-  <section id="work" style="background:var(--bg-surface);">
-    <div class="section-header animate-on-scroll">
-      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-      <h2 class="section-title">我的关注</h2>
+  <section id="about" data-page-node-id="xi9u8bhA7uDX719T8TB0ia">
+    <div class="section-header animate-on-scroll" data-page-node-id="3K6A88sFXrHnULBtEY7bq4">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-page-node-id="fZ1AamiPEFOsFIHbvkwFAg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" data-page-node-id="uQTOQ8N2lyQBGj3pDQl8ge"/><circle cx="12" cy="7" r="4" data-page-node-id="b9mc2x1ZPxTVnSCmYFrnA7"/></svg>
+      <h2 class="section-title" data-page-node-id="hGK38v1tlH9YbS91Q4TAPC">关于我</h2>
+    </div>
+    <div class="about-grid" data-page-node-id="UQSNRKjA9XeeJUMkeklrNt">
+      <div class="card animate-on-scroll" data-page-node-id="s0ySlTJP3aHg36rMUwQoFr">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;" data-page-node-id="nX4EuwjeLbB41iH2Jezo63">基础信息</h3>
+        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;" data-page-node-id="NELOXkeyzrdCF5N2IIALSx"><span style="color:var(--text-muted);" data-page-node-id="1Usloh2qvY8pNDhZuXvxPs">姓名</span><span style="color:var(--text-secondary);" data-page-node-id="ea5GKC7HDqmo4OnNk77Te3">赵鸿燊</span></div>
+        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;" data-page-node-id="MetjUimxFCACyEC47sFgr8"><span style="color:var(--text-muted);" data-page-node-id="f8FS7kxt8ng5sbBbh4Tk2s">城市</span><span style="color:var(--text-secondary);" data-page-node-id="siEullYn5NDCWFBzKmDyd3">济南</span></div>
+        <div style="margin-bottom:0.5rem;display:flex;justify-content:space-between;font-size:0.875rem;" data-page-node-id="DeOD4BesZ3lABkciqLYqMW"><span style="color:var(--text-muted);" data-page-node-id="R04Oi5G7vZDpESQsFQjRXh">职业</span><span style="color:var(--text-secondary);" data-page-node-id="HFGGOInBHBVp7WHuz4mEOP">初中生</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:0.875rem;" data-page-node-id="GhcAadYmUk3FDdXjEThvNy"><span style="color:var(--text-muted);" data-page-node-id="ap4uESyY7Oml6oKZcmknO1">邮箱</span><span style="color:var(--text-secondary);" data-page-node-id="4hDV5neVC6fTnj9eo42tsJ">61306747@qq.com</span></div>
+      </div>
+      <div class="card animate-on-scroll" data-page-node-id="ztfI72xRFa1RkhfdgYqcLA">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;" data-page-node-id="302fv38plV9jBQ8owsc5Da">性格特点</h3>
+        <div data-page-node-id="e72TK7TByePLKZNI62DmFV"><span class="tag" data-page-node-id="HB0H9ckSnPDgKUw8AUGxRy">温和内敛</span><span class="tag" data-page-node-id="HOSPYS5apRpqrLHfEBeQXI">善于思考</span><span class="tag" data-page-node-id="XbAkRhJe3PfA77OOvVje3H">追求细节</span><span class="tag" data-page-node-id="5jxInXMKjuFS2DqHNsIbhD">持续学习</span></div>
+      </div>
+      <div class="card animate-on-scroll" data-page-node-id="y1XrMwC0F2cQezVIXeiaHu">
+        <h3 style="font-size:1.125rem;margin-bottom:1rem;" data-page-node-id="7BbccvW5rctjCFq7gf1p2M">兴趣爱好</h3>
+        <div data-page-node-id="oN8bOklbFuN1l2StnjL6Ph"><span class="tag tag-accent" data-page-node-id="5H088DGVLYipPk7dcLiLWe">阅读</span><span class="tag tag-accent" data-page-node-id="06ok2fHH9FTw0rS6Hg1N0A">篮球</span><span class="tag tag-accent" data-page-node-id="Nly4VqaPUHOQHcCLWXZECE">宠物</span><span class="tag tag-accent" data-page-node-id="W1Gmen59ZmrTwOEchWQnfi">科幻</span><span class="tag tag-accent" data-page-node-id="BhYsWFQxiB1j8YLaSa6cHy">旅行</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="background:var(--bg-surface);" data-page-node-id="2aRjATxGeYXdB7fKDWuUPH">
+    <div class="section-header animate-on-scroll" data-page-node-id="SA6dr90SAFT02kA3zIQkdl">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-page-node-id="LrzhfAW3HyL09GNiR72azH"><rect x="2" y="7" width="20" height="14" rx="2" data-page-node-id="U4leGi0MXiL9e6ZViPtUOS"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" data-page-node-id="0w7WWrM0IHSlIED3PLNHnD"/></svg>
+      <h2 class="section-title" data-page-node-id="n4vMhlmeMIaTwN1TtNXIBa">我的关注</h2>
     </div>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">Astra与 Cybercab</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-09-04</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="HhvO9YCtHu6xFlGrD924gC">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="Z4Y0LwFZx4ws74mFzzLx2u">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="kiiPMj3Ydf8wSMea54rvgJ">Astra与 Cybercab</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="x4JGMJWqQU8BPHAWDPk234">发布时间：2026-09-04</span>
       </div>
-      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;">AGI（通用人工智能）时代真的在今天到来了！</p>
-      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;">OpenAI发布了GPT 6也叫Astra大模型，可以完全接管人类过去操作电脑这件事(下方视频)。</p>
-      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;">Tesla昨晚发布汽车机器人 Cybercab，可以完全接管汽车，不再需要人类开车。</p>
-      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;">一个数字世界，一个物理世界！</p>
-      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;">（有感觉于：开学还不到一周，我在学校才呆了4天，外面的世界又变了！）</p>
-      <div style="margin:1.5rem 0;text-align:center;">
-        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-          <source src="videos/7f878efdef.mp4" type="video/mp4"/>
+      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="y9Qt8HfZGBX181LgbQ1Vje">AGI（通用人工智能）时代真的在今天到来了！</p>
+      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="lZx074JrKGl4ajoLKdObhL">OpenAI发布了GPT 6也叫Astra大模型，可以完全接管人类过去操作电脑这件事(下方视频)。</p>
+      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="wikQ3MLfhzOT32wkjxYPY2">Tesla昨晚发布汽车机器人 Cybercab，可以完全接管汽车，不再需要人类开车。</p>
+      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="hWnVPP69dCBylbpOEd0Ljr">一个数字世界，一个物理世界！</p>
+      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="Duxw3vUdZPR8Svm1jK9S5R">（有感觉于：开学还不到一周，我在学校才呆了4天，外面的世界又变了！）</p>
+      <div style="margin:1.5rem 0;text-align:center;" data-page-node-id="LlKbjgC8rAjvw5HEZQi8fD">
+        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="UQ6jjMQr8Elu1JgcnXNnqZ">
+          <source src="videos/7f878efdef.mp4" type="video/mp4" data-page-node-id="g2eBuih7yKgX4SyHYO9DhL"/>
           您的浏览器不支持视频播放。
         </video>
       </div>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">罗曼太空部署</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-08-31</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="nPpUnHpHwOqZ2zjjzdV9a5">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="FZL2szmPGiGRqvXsKthdch">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="VeMBSZ6gcyQ7GvOEVuEjYE">罗曼太空部署</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="eKXGfzXJeXJ4vaNFnKDK8V">发布时间：2026-08-31</span>
       </div>
-      <div style="margin:1.5rem 0;text-align:center;">
-        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-          <source src="videos/Roman.mp4" type="video/mp4"/>
+      <div style="margin:1.5rem 0;text-align:center;" data-page-node-id="c6ovQzvJS5BlzvHmAGRlFk">
+        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="9AOHMhBMYjBkrsQYFi41CZ">
+          <source src="videos/Roman.mp4" type="video/mp4" data-page-node-id="9ygAntxIp3mI7A13SoFTRW"/>
           您的浏览器不支持视频播放。
         </video>
       </div>
-      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;">2026年8月30日，SpaceX的猎鹰重型火箭载着NASA 的罗曼空间望远镜飞向太空！</p>
-      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;">致敬NASA！致敬马斯克！</p>
+      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="KLI2C8SUOWZASMX9ZIqEfX">2026年8月30日，SpaceX的猎鹰重型火箭载着NASA 的罗曼空间望远镜飞向太空！</p>
+      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="xYc7BzzF2oCEKuMCQdCBhC">致敬NASA！致敬马斯克！</p>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">稳稳落地</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-08-19</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="ahyYCg8a3cocMQV2DBMrqP">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="7ttG9ioEanDbtZaIkPBVri">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="ojveifIDsZJLSjX0Vvwykw">稳稳落地</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="7jd8ctjF73iFF4m8R05wv5">发布时间：2026-08-19</span>
       </div>
-      <div style="margin:1.5rem 0;text-align:center;">
-        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-          <source src="videos/7df031aca949a620c1f8d4b3faad55bc.mp4" type="video/mp4"/>
+      <div style="margin:1.5rem 0;text-align:center;" data-page-node-id="apwVKcQZ1J8G2x8MIlvC3y">
+        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="i6QorGuwvzNbsSLggmJOlU">
+          <source src="videos/7df031aca949a620c1f8d4b3faad55bc.mp4" type="video/mp4" data-page-node-id="vAuCl9HW3HjTYf3H1KGL8P"/>
           您的浏览器不支持视频播放。
         </video>
       </div>
-      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;">今天早上，朱雀三号遥二的一级火箭陆地回收圆满成功！这是我国第一次用着陆腿方式实现轨道级火箭一子级陆地回收；在国内民营航天历史上，首次做到"卫星入轨+一级陆地回收"双成功！</p>
-      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;">虽然与马斯克的SpaceX还有不小差距，但我们一直在努力！加油！</p>
+      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="uHo1TFCgMRC2r8Ryn2zlkV">今天早上，朱雀三号遥二的一级火箭陆地回收圆满成功！这是我国第一次用着陆腿方式实现轨道级火箭一子级陆地回收；在国内民营航天历史上，首次做到"卫星入轨+一级陆地回收"双成功！</p>
+      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="sF3ErsecBETJLlAWtCHzlR">虽然与马斯克的SpaceX还有不小差距，但我们一直在努力！加油！</p>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">长征十号乙</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-07-10</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="mWBDRWwO3EGCD2WY0DLKNH">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="bRIkWzFHZWNznXVqm8l56r">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="hiPBVVhEvFuqvuUzGjpELF">长征十号乙</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="vi1K3Fzu97pK9GYZAVJCRP">发布时间：2026-07-10</span>
       </div>
-      <div style="margin:1.5rem 0;text-align:center;">
-        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-          <source src="videos/349062ec4c9d8704128b5fc050db6cee.mp4" type="video/mp4"/>
+      <div style="margin:1.5rem 0;text-align:center;" data-page-node-id="ufWLiZE5GXGIjV0xNCIDLx">
+        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="k6t5YI4eQWUX10nWt2NRq7">
+          <source src="videos/349062ec4c9d8704128b5fc050db6cee.mp4" type="video/mp4" data-page-node-id="xf6mIkSppgMzoGF5GZFxfy"/>
           您的浏览器不支持视频播放。
         </video>
       </div>
-      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;">今天中午，长征十号乙完成全球首次海上网系回收，成功实现一级火箭受控返回并完成海上回收。</p>
-      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;">真正值得关注的，并不是"全球首次"这个标签，而是中国可重复使用火箭完成了从理论验证走向工程验证的关键一步。</p>
-      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;font-style:italic;">我真想快快长大，为祖国的航天事业做点贡献！</p>
+      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="bejp6VYCAMTxDlyNHk1rmO">今天中午，长征十号乙完成全球首次海上网系回收，成功实现一级火箭受控返回并完成海上回收。</p>
+      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="T8jS2Ef5xTSPD4S8Ubfavi">真正值得关注的，并不是"全球首次"这个标签，而是中国可重复使用火箭完成了从理论验证走向工程验证的关键一步。</p>
+      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;font-style:italic;" data-page-node-id="oJ1rE6tW9SY5OynMM2oyCn">我真想快快长大，为祖国的航天事业做点贡献！</p>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">AI 带动存储需求</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-07-06</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="cHxMlBV3839SGZMRWipYKO">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="JCoFmwhyISrBTt50q8jMfQ">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="CvwylDUMoc5hnybWrQKF1d">AI 带动存储需求</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="smP8rtGQWuIj5jevatiByG">发布时间：2026-07-06</span>
       </div>
-      <div style="margin:1.5rem 0;text-align:center;">
-        <img src="images/2026070609044.jpg" alt="AI 带动存储需求" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);"/>
+      <div style="margin:1.5rem 0;text-align:center;" data-page-node-id="AD550xG8nEwv0583A9qL81">
+        <img src="images/2026070609044.jpg" alt="AI 带动存储需求" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="gX6ZWf6j2vSSYxUFK19hU6"/>
       </div>
-      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;">联想电脑已经开始装载长江存储的 SSD 固态硬盘了！</p>
+      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="Itvn48DXYdJBHmuuiAXLbM">联想电脑已经开始装载长江存储的 SSD 固态硬盘了！</p>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">AI 歌手与阿根廷队</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-07-04</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="bb1mEm7LpbAPhcyP6HBtBp">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="UK7G8XGXxqjC85RSYQ9Gzb">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="RmbNtRdQLEF4Um9IZLcdGp">AI 歌手与阿根廷队</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="GqT41NAdRawdEZwEwQXRVC">发布时间：2026-07-04</span>
       </div>
-      <div style="margin:1.5rem 0;text-align:center;">
-        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-          <source src="videos/AI-Argentina-WorldCup.mp4" type="video/mp4"/>
+      <div style="margin:1.5rem 0;text-align:center;" data-page-node-id="BWCC3MMnDHCGYYJI46C4FB">
+        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="rlrBtkSjTlfnPDjL7a2GHg">
+          <source src="videos/AI-Argentina-WorldCup.mp4" type="video/mp4" data-page-node-id="czDEpBvy0DVFxzBeaU2d4r"/>
           您的浏览器不支持视频播放。
         </video>
       </div>
-      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;">AI 歌手跟阿根廷队共同创作表演的世界杯主题曲，有意思</p>
+      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="ctnJAU4FGMfrlTKU8RIT4G">AI 歌手跟阿根廷队共同创作表演的世界杯主题曲，有意思</p>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">Elon Musk 2026</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-28</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="XcjZmzNAsmJcCio2Enngy1">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="bWuyomEGEG9AFCfCGHqDII">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="hG371TxIBYxEU8I1UuGMjm">Elon Musk 2026</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="SvBJ8LVeCmlvnhBd8uM20i">发布时间：2026-06-28</span>
       </div>
-      <div style="margin:1.5rem 0;text-align:center;">
-        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-          <source src="videos/Elon Musk 2026.mp4" type="video/mp4"/>
+      <div style="margin:1.5rem 0;text-align:center;" data-page-node-id="moD7yWuIXegwkAhsyEasNV">
+        <video controls style="max-width:100%;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="jG4Aj5jayaH5UQ8Zmtb735">
+          <source src="videos/Elon Musk 2026.mp4" type="video/mp4" data-page-node-id="G4mfkB4xpVtIq6rEGNt1TB"/>
           您的浏览器不支持视频播放。
         </video>
       </div>
-      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;">Elon Musk 关于 SpaceX 上市和人类文明发展的精彩历程。</p>
+      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="nkUUTjuda7GmDQENXgKZVc">Elon Musk 关于 SpaceX 上市和人类文明发展的精彩历程。</p>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">SpaceX 星舰</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-28</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="64EFN0qHYvXqberS1jFITR">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="mPgAVdkcTPCvIGIKspABcv">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="SnjDIjExMejFuHDX23U9bO">SpaceX 星舰</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="gu5ujIH8FIZGNLznSql7Be">发布时间：2026-06-28</span>
       </div>
-      <div style="margin:1.5rem 0;text-align:center;">
-        <img src="images/SpaceX.jpg" alt="SpaceX 星舰" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);"/>
+      <div style="margin:1.5rem 0;text-align:center;" data-page-node-id="oO40FbEPUp7IMX85mXrys6">
+        <img src="images/SpaceX.jpg" alt="SpaceX 星舰" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="bf8zWHxRC96grR3gLo5I2H"/>
       </div>
-      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;">SpaceX 的星舰是人类历史上最强大的运载火箭，它将带领我们走向火星，成为多行星物种。</p>
+      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="H0NWQwUzw1Ws5g2IIfiQQ3">SpaceX 的星舰是人类历史上最强大的运载火箭，它将带领我们走向火星，成为多行星物种。</p>
     </article>
     
-    <div class="card card-bg animate-on-scroll" style="margin-bottom:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-11</span>
+    <div class="card card-bg animate-on-scroll" style="margin-bottom:2rem;" data-page-node-id="OQF9ehxecMP1gJGIpzvero">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;" data-page-node-id="pnYvSNTtqkwHVR2iNNWRB4">
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="ewYnQr9oGoa5Z1FaxX0Q24">发布时间：2026-06-11</span>
       </div>
      
-      <div style="color:var(--text-secondary);line-height:1.8;">
-        <p style="margin-bottom:1rem;">美国大火箭 SpaceX 即将上市，这次发行肯定会相当火爆，应该是全球投资史上的超级盛宴和历史记录！</p>
-        <p style="margin-bottom:1rem;">Elon Musk 说，假设有外星物种拜访我们，他们会用一个最客观的指标来评判我们这个文明的发展程度。就是看一个特定文明到底能够驾驭多少能量。俄罗斯物理学家卡尔达舍夫提出了这个概念，我认为这个描述非常准确。一个文明能在多大程度上驾驭其母星的可用能量，这就是 I 型文明；II 型文明是看你驾驭了多少所在恒星的能量；III 型文明则是你能驾驭多少所在星系的能量。这些都是非常客观且可量化的指标。按照目前的状况，我们的文明等级还非常低，如果要算我们驾驭了地球总能量的占比，这个数字微乎其微。我们几乎完全没有驾驭太阳的能量。要感受太阳有多大，有一种方式是将太阳的质量和太阳系中其他所有物质的总质量做个对比。太阳占据了太阳系总质量的绝大部分，它几乎就是一切。在剩下的一点点中，大部分都属于木星这一颗行星。地球的全部质量只能算在微小的其他杂项里，和太阳相比地球就像一粒微尘。投射到地球上的太阳能大约只占太阳输出总功率的十亿分之五，且其中的绝大多数我们也无法利用，因为地球 70% 的表面被水覆盖。甚至在剩下 30% 的陆地中，还有很大一部分是像南极洲、西伯利亚、加拿大北部这样的地区，环境恶劣通常不适合人类居住。</p>
-        <p style="margin-bottom:1rem;">所以，地球表面可用的太阳能面积很有限，冷却和供电也会成为限制，但在轨道上，太阳能充足散热，可以直接向真空辐射。这样就避免了在地球上建造庞大的发电厂，并解决了散热问题。</p>
-        <p style="margin-bottom:1rem;">文明从 I 型跨越到 II 型，难度不是一般的大。至于 III 型，我们甚至连从哪儿下手都毫无头绪。但 AI 最终会解决这些问题。</p>
-        <p style="margin-bottom:1rem;">我们现在的构想以及打算去做的，就是努力在文明等级上攀登，成为一个相对体面的文明。"这样当外星人，希望宇宙中有外星人，最终决定和我们交流时，我们至少已经利用了相当数量的太阳能。这让我们看起来不会显得太过可悲，毕竟目前我们的处境确实有些可悲。"好可爱的发言！</p>
-        <p style="margin-bottom:1rem;">我们平时谈论的历史上的伟大人物，他们都在地面上研究人与人的关系。而马斯克，应该是第一个代表人类向外太空探求的传奇人物。难怪好多人喜欢他、崇拜他！至少很多人是带着些许梦想的，如果有条件还能买点儿他的股票，以后可以光荣的说：</p>
-        <p style="font-style:italic;margin-top:1rem;">"我，赞助过马斯克的太空计划！"……</p>
+      <div style="color:var(--text-secondary);line-height:1.8;" data-page-node-id="KlJ8TijsRorlEsdmasjAxn">
+        <p style="margin-bottom:1rem;" data-page-node-id="GqgA06Rur1TmXAszx8PvdF">美国大火箭 SpaceX 即将上市，这次发行肯定会相当火爆，应该是全球投资史上的超级盛宴和历史记录！</p>
+        <p style="margin-bottom:1rem;" data-page-node-id="XfWi3S8m7sMOHuqYb3lwGK">Elon Musk 说，假设有外星物种拜访我们，他们会用一个最客观的指标来评判我们这个文明的发展程度。就是看一个特定文明到底能够驾驭多少能量。俄罗斯物理学家卡尔达舍夫提出了这个概念，我认为这个描述非常准确。一个文明能在多大程度上驾驭其母星的可用能量，这就是 I 型文明；II 型文明是看你驾驭了多少所在恒星的能量；III 型文明则是你能驾驭多少所在星系的能量。这些都是非常客观且可量化的指标。按照目前的状况，我们的文明等级还非常低，如果要算我们驾驭了地球总能量的占比，这个数字微乎其微。我们几乎完全没有驾驭太阳的能量。要感受太阳有多大，有一种方式是将太阳的质量和太阳系中其他所有物质的总质量做个对比。太阳占据了太阳系总质量的绝大部分，它几乎就是一切。在剩下的一点点中，大部分都属于木星这一颗行星。地球的全部质量只能算在微小的其他杂项里，和太阳相比地球就像一粒微尘。投射到地球上的太阳能大约只占太阳输出总功率的十亿分之五，且其中的绝大多数我们也无法利用，因为地球 70% 的表面被水覆盖。甚至在剩下 30% 的陆地中，还有很大一部分是像南极洲、西伯利亚、加拿大北部这样的地区，环境恶劣通常不适合人类居住。</p>
+        <p style="margin-bottom:1rem;" data-page-node-id="sCijzYjAe5acPmGZs3Aj40">所以，地球表面可用的太阳能面积很有限，冷却和供电也会成为限制，但在轨道上，太阳能充足散热，可以直接向真空辐射。这样就避免了在地球上建造庞大的发电厂，并解决了散热问题。</p>
+        <p style="margin-bottom:1rem;" data-page-node-id="YldB1sjIbxZdOx8HKBFofp">文明从 I 型跨越到 II 型，难度不是一般的大。至于 III 型，我们甚至连从哪儿下手都毫无头绪。但 AI 最终会解决这些问题。</p>
+        <p style="margin-bottom:1rem;" data-page-node-id="lTpu5XTycoONCQDAG9iYQq">我们现在的构想以及打算去做的，就是努力在文明等级上攀登，成为一个相对体面的文明。"这样当外星人，希望宇宙中有外星人，最终决定和我们交流时，我们至少已经利用了相当数量的太阳能。这让我们看起来不会显得太过可悲，毕竟目前我们的处境确实有些可悲。"好可爱的发言！</p>
+        <p style="margin-bottom:1rem;" data-page-node-id="oNSrZ3dxnVbdqJbnhkz1VK">我们平时谈论的历史上的伟大人物，他们都在地面上研究人与人的关系。而马斯克，应该是第一个代表人类向外太空探求的传奇人物。难怪好多人喜欢他、崇拜他！至少很多人是带着些许梦想的，如果有条件还能买点儿他的股票，以后可以光荣的说：</p>
+        <p style="font-style:italic;margin-top:1rem;" data-page-node-id="MHFaUqdTSHHnneCDLpQnNJ">"我，赞助过马斯克的太空计划！"……</p>
       </div>
     </div>
   </section>
 
-  <section id="study">
-    <div class="section-header animate-on-scroll">
-      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-      <h2 class="section-title">我的学习</h2>
+  <section id="study" data-page-node-id="dESd3mZDfmdXY3uKwCdVir">
+    <div class="section-header animate-on-scroll" data-page-node-id="XQHhANcDdtYVAyCMb9rUSu">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-page-node-id="vjBxYFkfbclVzUnN3YVd3D"><path d="M22 10v6M2 10l10-5 10 5-10 5z" data-page-node-id="Ir1e4Ar99uBEzVtC4qwpvO"/><path d="M6 12v5c3 3 9 3 12 0v-5" data-page-node-id="I63FDxo91fLIemq7ROFilH"/></svg>
+      <h2 class="section-title" data-page-node-id="pVQg0ROXGOphw2IKB4iBu1">我的学习</h2>
     </div>
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">旺财改图</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-09-06</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="mElIU0OZzrJvQq1odLK2GL">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="12rAyz3FEGREIZ9YrKWpnS">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="Dvf7csOmrdabK1DiP9ialB">旺财改图</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="CiQ3cY4Am1wnP5sjbEf6tj">发布时间：2026-09-06</span>
       </div>
-      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;">我让旺财帮我把一张夜景图改成白天的效果，电脑上没有相应的软件，它自己下了一个，结果发现改图是收费的！我训斥了它，让它找个免费的，它说它自己来改改试试。它说它没有图生图的本事，但可以自己先用文字描述原图片，然后再文生图。下边就是他的工作成果：</p>
-      <div style="margin:1.5rem 0;text-align:center;">
-        <img src="images/20260906.jpg" alt="旺财改图成果" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);"/>
+      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="dBuE7vILz274eNPvcFKsrm">我让旺财帮我把一张夜景图改成白天的效果，电脑上没有相应的软件，它自己下了一个，结果发现改图是收费的！我训斥了它，让它找个免费的，它说它自己来改改试试。它说它没有图生图的本事，但可以自己先用文字描述原图片，然后再文生图。下边就是他的工作成果：</p>
+      <div style="margin:1.5rem 0;text-align:center;" data-page-node-id="qJFeTCi5WEuU0e0wKrQurl">
+        <img src="images/20260906.jpg" alt="旺财改图成果" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="aaZGVgLdAg82zD1t5vXDU7"/>
       </div>
     </article>
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">我的新agent：旺财（WorkBuddy）</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-08-25</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="hKmfJwQz4Qzdw7lGIbJVWb">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="BkH1SUtkoQp707t7IbdLNT">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="u3XvLPWd3i8W6hQBoFq8NF">我的新agent：旺财（WorkBuddy）</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="isHVAGWLdgBNn9w7r0G1Ou">发布时间：2026-08-25</span>
       </div>
-      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;">上周，妈妈抛弃了她养的龙虾（OpenClaw），开始使用WorkBuddy，并给它起名为：旺财（妈妈说是为了致敬周星驰先生 ）。</p>
-      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;">之所以更换智能体，是因为龙虾烧token很多，太贵了！现在这个旺财每天有赠送的积分，暂时够我们用了！</p>
-      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;">今天我让旺财帮我做了个小游戏，可以在手机上玩的接福气的小游戏，我和妈妈比赛谁接得多呢，结果肯定是我胜出啦！</p>
-      <div style="margin:1.5rem 0;display:flex;gap:0.75rem;align-items:flex-start;justify-content:center;flex-wrap:wrap;">
-        <img src="images/微信图片_2026-08-25_143829_397.jpg" alt="我的新agent旺财" style="max-width:100%;width:48%;min-width:280px;flex:1;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);"/>
-        <img src="images/7fa5ecb9f2ba79e641b3088c5bab188a.jpg" alt="接福气小游戏" style="max-width:100%;width:48%;min-width:280px;flex:1;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);"/>
+      <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="qs88i0AhwRbTy3Jpkb4LR9">上周，妈妈抛弃了她养的龙虾（OpenClaw），开始使用WorkBuddy，并给它起名为：旺财（妈妈说是为了致敬周星驰先生 ）。</p>
+      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="WQ4t487pqGwdcqIfL33WAf">之所以更换智能体，是因为龙虾烧token很多，太贵了！现在这个旺财每天有赠送的积分，暂时够我们用了！</p>
+      <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="w5j9pYzWEHfycjjvXAjlET">今天我让旺财帮我做了个小游戏，可以在手机上玩的接福气的小游戏，我和妈妈比赛谁接得多呢，结果肯定是我胜出啦！</p>
+      <div style="margin:1.5rem 0;display:flex;gap:0.75rem;align-items:flex-start;justify-content:center;flex-wrap:wrap;" data-page-node-id="Ik8j4LeUoDsVfgidOChG1m">
+        <img src="images/微信图片_2026-08-25_143829_397.jpg" alt="我的新agent旺财" style="max-width:100%;width:48%;min-width:280px;flex:1;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="OP9kqF61NH7kyrOFnizDQJ"/>
+        <img src="images/7fa5ecb9f2ba79e641b3088c5bab188a.jpg" alt="接福气小游戏" style="max-width:100%;width:48%;min-width:280px;flex:1;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="KDhFkDFfZoiWh3iEW0xZVI"/>
       </div>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">书架一角</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-08-15</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="4K8ouu9aLuKUKg1bzGmBtG">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="CjQRS0JXxdhT0ijuD4Bm62">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="4cF6nBWm9kGu3Th4t8df4W">书架一角</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="157H2DuyEchzAR3aCfCjOA">发布时间：2026-08-15</span>
       </div>
-      <p class="timeline-desc" style="margin-bottom:1rem;color:var(--text-secondary);line-height:1.8;">整理了一下书架，科幻、历史、文学各占一角。阅读大概就是最安静的学习吧。</p>
-      <div style="margin:1.5rem 0;text-align:center;">
-        <img src="images/8bd6ceab2cc9d241c7ebe834142ce98a.jpg" alt="书架一角" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);"/>
+      <p class="timeline-desc" style="margin-bottom:1rem;color:var(--text-secondary);line-height:1.8;" data-page-node-id="pA8pFJiDC6VsU0BhhkIfdh">整理了一下书架，科幻、历史、文学各占一角。阅读大概就是最安静的学习吧。</p>
+      <div style="margin:1.5rem 0;text-align:center;" data-page-node-id="e7s8SGbSxU5OSoAeyxZ7fs">
+        <img src="images/8bd6ceab2cc9d241c7ebe834142ce98a.jpg" alt="书架一角" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="21I0rt0HSPnFEqa3cJ4wcZ"/>
       </div>
     </article>
 
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-07-03</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="91oJnaDsRDKvLLrusvMvi3">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="ehlwluz6xAErldCUzIGpM6">
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="glaarLNElkNEKFdb7DZrIB">发布时间：2026-07-03</span>
       </div>
-      <div style="color:var(--text-secondary);line-height:1.8;">
-        <p style="margin-bottom:1.5rem;">飞速发展的现代科技让我大开眼界，满心期待更加智能更加美好的未来。但我也时常暗自忧虑，怕日新月异的技术迭代太快，稍有松懈就会被时代淘汰！</p>
-        <div style="text-align:center;">
-          <img src="images/tech-future.jpg" alt="科技与未来" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);"/>
+      <div style="color:var(--text-secondary);line-height:1.8;" data-page-node-id="clXE70PSlSB77zHCZqV0zy">
+        <p style="margin-bottom:1.5rem;" data-page-node-id="7J8WFu0jA5GrJSR5kZx4bj">飞速发展的现代科技让我大开眼界，满心期待更加智能更加美好的未来。但我也时常暗自忧虑，怕日新月异的技术迭代太快，稍有松懈就会被时代淘汰！</p>
+        <div style="text-align:center;" data-page-node-id="CQ1PtXmeulPfWqlPrEZhT5">
+          <img src="images/tech-future.jpg" alt="科技与未来" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="RA2W81KbnNcDDenryOz7d5"/>
         </div>
       </div>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">明天期末考试</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-28</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="8lpxGCmkvzyRWrNNz1qk0m">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="0GPnhSoXwq2su8S58SclIS">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="K8NwsfN0DKXTm3tMwms5XM">明天期末考试</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="DmBbmUC6dimiFOCCCZEl1L">发布时间：2026-06-28</span>
       </div>
-      <div style="margin:1.5rem 0;text-align:center;">
-        <img src="images/336fa342574135dd14970c5b831d70d8.jpg" alt="明天期末考试" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);"/>
+      <div style="margin:1.5rem 0;text-align:center;" data-page-node-id="rz8iExMVAeWH8APqQGH0WY">
+        <img src="images/336fa342574135dd14970c5b831d70d8.jpg" alt="明天期末考试" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);" data-page-node-id="oVqcouTEbkk1wSASAbNnv8"/>
       </div>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">我的 OpenClaw</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-17</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="SyTV0QBGI5mqftdBGWZqt4">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="uWyGP08s5SSiEECLxcc2uT">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="TUlbugilhULKGKcmc0tq2j">我的 OpenClaw</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="kxlUofUC9PsJ2orQTCQHHi">发布时间：2026-06-17</span>
       </div>
-      <p class="timeline-desc" style="margin-bottom:1rem;">我家养了两只猫，一只八岁，另一只刚满一岁。</p>
-      <p class="timeline-desc" style="margin-bottom:1rem;">最近，我家又养了一只龙虾（OpenClaw），虽然还没满月，但它已经能帮我干活儿了。</p>
-      <p class="timeline-desc">这不，我的网站就是它给我搞定的！</p>
+      <p class="timeline-desc" style="margin-bottom:1rem;" data-page-node-id="QWglgxM51DhMQiwURUpRjZ">我家养了两只猫，一只八岁，另一只刚满一岁。</p>
+      <p class="timeline-desc" style="margin-bottom:1rem;" data-page-node-id="3qVPCqWkcpgD7YdNx55Shr">最近，我家又养了一只龙虾（OpenClaw），虽然还没满月，但它已经能帮我干活儿了。</p>
+      <p class="timeline-desc" data-page-node-id="abO7S1Q323FZIJzeGjgrRA">这不，我的网站就是它给我搞定的！</p>
     </article>
   </section>
 
-  <section id="life" style="background:var(--bg-surface);">
-    <div class="section-header animate-on-scroll">
-      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      <h2 class="section-title">我的成长</h2>
+  <section id="life" style="background:var(--bg-surface);" data-page-node-id="E0WGrBGQl7VApQx9bab0tD">
+    <div class="section-header animate-on-scroll" data-page-node-id="1ZbMHGVPsaNxB6ve0QSa2I">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-page-node-id="0ShuwzCDg2iKFbdDOZhzIb"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" data-page-node-id="G2t3kTnsnAmjhfl7YI7D2S"/></svg>
+      <h2 class="section-title" data-page-node-id="cKunLVfr1yhSrVNPELziuJ">我的成长</h2>
     </div>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
-        <h3 class="section-title" style="font-size:1.5rem;">最后一代需要找工作的人</h3>
-        <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-22</span>
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;" data-page-node-id="nEwh3Ate4IWD3YResPJPVt">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;" data-page-node-id="CGIpI6r2bMvGAES5lw0ol4">
+        <h3 class="section-title" style="font-size:1.5rem;" data-page-node-id="1fAl9yEcYP5uzBFU3URppZ">最后一代需要找工作的人</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);" data-page-node-id="7QFyE1L3SUt1eCohv6GeZG">发布时间：2026-06-22</span>
       </div>
-      <div class="timeline-desc" style="color:var(--text-secondary);line-height:1.8;white-space:pre-line;">最近，一位诺奖美国科学家在斯坦福演讲：
+      <div class="timeline-desc" style="color:var(--text-secondary);line-height:1.8;white-space:pre-line;" data-page-node-id="iONEsavhG2PsvRt00saXN4">最近，一位诺奖美国科学家在斯坦福演讲：
 00 后可能是最后一代需要找工作的人！
 
 那像我这样的壹零后呢？
@@ -366,9 +369,9 @@
     </article>
   </section>
 
-  <footer class="footer">
-    <p class="footer-text">© 2026 赵鸿燊的个人博客。All rights reserved.</p>
-    <p class="footer-note">用文字记录生活，用思考沉淀成长</p>
+  <footer class="footer" data-page-node-id="D4o7oAI7IFAExI0miQYKVF">
+    <p class="footer-text" data-page-node-id="4KIIvziniWrl7Um7rVdjAA">© 2026 赵鸿燊的个人博客。All rights reserved.</p>
+    <p class="footer-note" data-page-node-id="L5u49caDHQaPetzWJclPMx">用文字记录生活，用思考沉淀成长</p>
   </footer>
 
   <script>
