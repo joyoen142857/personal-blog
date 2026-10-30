@@ -138,6 +138,133 @@
 
     <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
+        <h3 class="section-title" style="font-size:1.6rem;line-height:1.35;margin:0;">币安被盗事件全过程复盘与信用启示</h3>
+        <span style="font-size:0.75rem;color:var(--text-muted);white-space:nowrap;">发布时间：2026-10-30</span>
+      </div>
+      <div style="height:1px;background:var(--bg-surface);margin:0 0 1.4rem;"></div>
+
+      <div style="margin-bottom:1.4rem;padding:0.8rem 1rem;background:var(--bg-surface);border-radius:0.5rem;font-size:0.8rem;color:var(--text-muted);line-height:1.7;">
+        整理时间：2026-10-30｜信息来源：国内外权威新闻（币安官方公告、证券时报、澎湃、中国经济网、腾讯新闻、Reuters / TRM Labs / Chainalysis / BBC 等）｜整理人：旺财（WorkBuddy）
+      </div>
+
+      <h4 style="display:flex;align-items:center;gap:0.55rem;margin:0 0 0.8rem;font-size:1.12rem;font-weight:700;color:var(--text-primary);">
+        <span style="display:inline-flex;align-items:center;justify-content:center;min-width:1.7rem;height:1.7rem;padding:0 0.35rem;border-radius:0.45rem;background:var(--accent-light);color:var(--accent);font-size:0.9rem;">一</span>事件概览
+      </h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">2026 年 10 月 29 日（美东时间周四深夜）至 10 月 30 日凌晨（北京时间约 4:20），全球最大加密货币交易所<strong style="color:var(--text-primary);">币安（Binance）</strong>发生一起被多方称为“加密史上最大盗窃案”的安全事件。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;"><strong style="color:var(--text-primary);">波及规模：</strong>币安官方公告称事件“总影响约 <strong style="color:var(--text-primary);">63 亿美元</strong>”（约 6.3B USD）；链上分析机构 Glassnode 估计实际流出约 53 亿美元；部分媒体按最终净损测算约 58 亿美元。无论采用哪一口径，均<strong style="color:var(--text-primary);">超过 2025 年 Bybit 的 15 亿美元案，成为有记录以来规模最大的加密资产盗窃</strong>。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;"><strong style="color:var(--text-primary);">涉及范围：</strong>资金横跨 <strong style="color:var(--text-primary);">10 条区块链</strong>（比特币、以太坊、Solana、XRP、波场、Arbitrum、Avalanche、Optimism、Base 等）。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;"><strong style="color:var(--text-primary);">核心账户：</strong>标记为 “Binance 14” 的热钱包被攻破，单次向陌生地址转出约 <strong style="color:var(--text-primary);">16.7 万枚 ETH</strong>（约 25 亿美元），并伴随约 <strong style="color:var(--text-primary);">16.15 亿枚 USDT</strong>、<strong style="color:var(--text-primary);">7.67 亿枚 USDC</strong> 及数十种代币被转移。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;"><strong style="color:var(--text-primary);">作案时长：</strong>TRM Labs 称主体过程仅约 <strong style="color:var(--text-primary);">20 分钟</strong>；另有分析指 40 分钟内流出总额定格在 58 亿美元上下。</p>
+
+      <h4 style="display:flex;align-items:center;gap:0.55rem;margin:1.9rem 0 0.8rem;font-size:1.12rem;font-weight:700;color:var(--text-primary);">
+        <span style="display:inline-flex;align-items:center;justify-content:center;min-width:1.7rem;height:1.7rem;padding:0 0.35rem;border-radius:0.45rem;background:var(--accent-light);color:var(--accent);font-size:0.9rem;">二</span>事件全过程（按时间线与因果梳理）
+      </h4>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">1. 入口：一名工程师的笔记本电脑成为突破口</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">币安初步调查显示，事件<strong style="color:var(--text-primary);">可能涉及一名 DevOps（开发运维）工程师的笔记本电脑被入侵</strong>。攻击者借机访问了某个<strong style="color:var(--text-primary);">服务容器（service container）</strong>，并提交了<strong style="color:var(--text-primary);">未经授权的提现交易</strong>。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">币安明确表示“<strong style="color:var(--text-primary);">未发现任何钱包私钥泄露的证据</strong>”，即问题不在冷存储私钥，而在交易所内部的签名 / 调度基础设施。视频中 ChainCatcher 的解读进一步指出，攻击者诱使内部人员安装伪装成“会议软件”的恶意程序，从而渗透进运维环境——这与 2025 年 Bybit 案的手法高度相似（先攻破一名开发者的电脑，再篡改签名界面）。</p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">2. 手法：一次被“彩排”过的精准渗透</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">安全机构（Cobo 联合创始人神鱼等）复盘出令人警惕的细节：</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">攻击者利用以太坊 <strong style="color:var(--text-primary);">EIP-7702 授权机制</strong>，将主力热钱包“原地升级”为恶意清扫合约（Sweeper），只需调用一次内置函数即可在<strong style="color:var(--text-primary);">单笔交易、同一区块内</strong>把所有代币与 ETH 打包抽干，彻底抹平风控系统的反应时间窗口。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">攻击<strong style="color:var(--text-primary);">事前制定了涵盖 64 种代币的转移清单</strong>，并用测试钱包进行了<strong style="color:var(--text-primary);">两次演练</strong>，最后一次演练距正式动手仅 <strong style="color:var(--text-primary);">3.5 小时</strong>。这说明攻击者已摸清热钱包的签名逻辑，且留有充足“彩排”时间。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">判断结论：问题<strong style="color:var(--text-primary);">主要出在签名环节，而非智能合约漏洞</strong>；究竟是私钥泄露还是签名系统被利用，币安至今未给最终答案。</p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">3. 资金流向与“冻结战”：一半被盗资产被按下暂停键</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">被盗后，攻击者迅速将部分<strong style="color:var(--text-primary);">易于被冻结的稳定币（USDT/USDC）换成“冻不住”的 ETH</strong>，试图规避发行方的一键冻结权。但中心化稳定币的“可冻结”特性反而成了追回利器。截至目前各方冻结 / 管控情况：</p>
+      <table style="width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:0.88rem;line-height:1.7;">
+        <thead>
+          <tr style="background:var(--accent-light);">
+            <th style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;text-align:left;color:var(--text-primary);font-weight:700;">机构</th>
+            <th style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;text-align:left;color:var(--text-primary);font-weight:700;">冻结 / 管控金额</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">Tether（USDT 发行方）</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">约 <strong style="color:var(--text-primary);">15.7 亿美元</strong></td></tr>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">Circle（USDC 发行方）</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">约 <strong style="color:var(--text-primary);">8 亿美元以上</strong></td></tr>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">Ripple</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">约 <strong style="color:var(--text-primary);">2 亿美元</strong></td></tr>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">World Liberty Financial</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">约 2700 万美元稳定币 + 约 200 万美元 WLFI</td></tr>
+          <tr style="background:var(--bg-surface);"><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-primary);font-weight:700;">链上合计已冻结</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-primary);font-weight:700;">约 <strong>30 亿美元（3B）</strong></td></tr>
+        </tbody>
+      </table>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">币安官方 X 账号最新更新：“当前经核实的冻结总额约 <strong style="color:var(--text-primary);">30 亿美元</strong>，将继续与执法部门、发行方、情报机构协作追踪并冻结更多资产。”剩余约 33 亿美元的状态尚未披露。</p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">4. 归因：高度指向朝鲜 Lazarus 组织</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">TRM Labs、Chainalysis 均表示对<strong style="color:var(--text-primary);">朝鲜国家背景的 Lazarus Group（又称 TraderTraitor）</strong>有“高度信心”；BBC 援引两家机构作出同样归因。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">链上侦探 <strong style="color:var(--text-primary);">ZachXBT</strong> 在视频中被重点引用——他曾在 2025 年 Bybit 案中提交决定性证据（测试交易、关联钱包、取证图谱、时间细节）将攻击锁定为 Lazarus，并领取了 Arkham 的赏金。本次视频沿用其分析框架，指出币安案与 Bybit 案手法同源。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">币安自身<strong style="color:var(--text-primary);">未正式确认归因</strong>，仅表示正与执法部门确认罪犯身份、将其绳之以法。</p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">5. 市场冲击：恐慌性抛售与连锁爆仓</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">消息发酵后，加密市场全线跳水：比特币盘中<strong style="color:var(--text-primary);">跌破 79,000 美元</strong>（最大跌幅约 3.7%–5%，一度下探 76,640 美元）；以太坊跌至约 <strong style="color:var(--text-primary);">2,180 美元</strong>（跌近 4%）；BNB 下滑约 <strong style="color:var(--text-primary);">7%</strong>；Solana 跌约 3%。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">爆仓惨烈：一小时内全网爆仓约 <strong style="color:var(--text-primary);">6.27 亿美元</strong>（币安占 3.448 亿）；24 小时累计爆仓超 <strong style="color:var(--text-primary);">15 亿美元</strong>、涉及 <strong style="color:var(--text-primary);">23 万人以上</strong>。Coinbase（COIN）、Strategy（MSTR）等关联美股盘后跟跌。</p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">6. 币安的危机应对（标准流程）</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">暂停所有充值与提现，撤销受影响地址授权；联合执法机构、区块链情报伙伴追查；承诺“用户资金安全”，将通过 <strong style="color:var(--text-primary);">SAFU 基金 + 公司自有资金</strong>承担全部损失；承诺修复完成后发布完整技术复盘与更新版储备金证明（PoR）。</p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">7. 历史对照</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;"><strong style="color:var(--text-primary);">2025 年 2 月 Bybit 案：</strong>以太坊冷钱包被钓鱼攻击篡改，损失约 <strong style="color:var(--text-primary);">14.6 亿美元</strong>（超 40 万 ETH/stETH），同样归因 Lazarus，成为当时史上最大。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;"><strong style="color:var(--text-primary);">2019 年 5 月 7 日币安案：</strong>热钱包被盗 <strong style="color:var(--text-primary);">7,000 枚 BTC</strong>（当时约 4,100 万美元，占其 BTC 持仓 2%）。当时 CZ 直播诚恳道歉，并用 SAFU 全额赔付，平稳落地。<strong style="color:var(--text-primary);">七年后，被盗金额膨胀约 140 倍</strong>。</p>
+
+      <h4 style="display:flex;align-items:center;gap:0.55rem;margin:1.9rem 0 0.8rem;font-size:1.12rem;font-weight:700;color:var(--text-primary);">
+        <span style="display:inline-flex;align-items:center;justify-content:center;min-width:1.7rem;height:1.7rem;padding:0 0.35rem;border-radius:0.45rem;background:var(--accent-light);color:var(--accent);font-size:0.9rem;">三</span>赵长鹏与币安的“全额赔付”表态
+      </h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">赵长鹏（CZ）已于 2023 年 11 月卸任 CEO、不再负责日常运营，但目前仍是币安<strong style="color:var(--text-primary);">最大股东</strong>。事件后各方表态如下：</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;"><strong style="color:var(--text-primary);">赵长鹏（CZ）：</strong>在 X 上转发 DefiLlama 创始人 0xngmi 的损失估算并写道——“<strong style="color:var(--text-primary);">损失可能比 10 亿美元略高一些，但是全部会覆盖</strong>”；并特意补充：“虽然我不会再管理币安了，但<strong style="color:var(--text-primary);">作为股东，我希望所有的用户资金都能得到全额保障</strong>。”</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;"><strong style="color:var(--text-primary);">何一（联合创始人）：</strong>明确表示币安将<strong style="color:var(--text-primary);">承担全部因黑客攻击造成的损失</strong>，用户资金安全。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;"><strong style="color:var(--text-primary);">币安官方：</strong>8 点 13 分发出 “<strong style="color:var(--text-primary);">Binance will cover all losses</strong>” 声明，称将通过 SAFU 基金及公司自有资金覆盖全部损失。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;"><strong style="color:var(--text-primary);">关于赔付能力：</strong>币安 2018 年设立的 SAFU 用户安全基金规模约 <strong style="color:var(--text-primary);">10 亿美元</strong>（全部以 BTC 持有）。而本次净损失据测算已<strong style="color:var(--text-primary);">略高于 10 亿美元</strong>，意味着 SAFU 已不够用。实际赔付来源将转向币安自身资产负债表——其托管资产约 <strong style="color:var(--text-primary);">1,440 亿–1,628 亿美元</strong>、年营收约 <strong style="color:var(--text-primary);">160–170 亿美元</strong>，净损占比不到 0.7%，<strong style="color:var(--text-primary);">单从财务看不构成生存威胁</strong>。</p>
+
+      <h4 style="display:flex;align-items:center;gap:0.55rem;margin:1.9rem 0 0.8rem;font-size:1.12rem;font-weight:700;color:var(--text-primary);">
+        <span style="display:inline-flex;align-items:center;justify-content:center;min-width:1.7rem;height:1.7rem;padding:0 0.35rem;border-radius:0.45rem;background:var(--accent-light);color:var(--accent);font-size:0.9rem;">四</span>信用（信任）在现代商业活动中的重要性
+      </h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">本次事件最值得咀嚼的，不是 63 亿美元的数字本身，而是它暴露的一条铁律：<strong style="color:var(--text-primary);">在金融与交易平台行业，信用即生命线，偿付能力不等于信用能力。</strong></p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">1. 信用是金融业态的“隐性底牌”</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">币安长期把“安全”作为核心竞争力（底牌）。对用户而言，把资产交给一家交易所，本质上押注的是<strong style="color:var(--text-primary);">信任</strong>——相信它守得住私钥、拦得住攻击、出事赔得起。这种信任无法写进资产负债表，却决定了用户是否愿意把真金白银放进来。一旦底牌出现裂缝，信任折价“从来不是按资产负债表计算的”。</p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">2. 信用的脆弱性：建立难、摧毁易、修复慢</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">2019 年币安用一次干净的 SAFU 全额赔付，把危机变成信任加分项；2026 年的同一家交易所，金额放大 140 倍后，即便“赔得起”，市场仍用脚投票——BTC 跌破、BNB 重挫、全网爆仓。这印证了信用资产的典型曲线：<strong style="color:var(--text-primary);">积累需经年累月，崩塌只在一夜</strong>。Mt.Gox（2014）的崩塌至今仍是行业阴影，今天的币安也站在同样的信任压力测试关口。</p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">3. 及时、透明、兜底，是信用修复的三块基石</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">对比处置得当与处置失当的案例，信用修复的关键动作高度一致：<strong style="color:var(--text-primary);">第一时间表态</strong>——CZ、何一、官方在数小时内接连发声，明确“全额覆盖”，避免了谣言真空；<strong style="color:var(--text-primary);">立即熔断</strong>——暂停提现、撤销授权、配合执法，用行动而非口号证明“用户在管”；<strong style="color:var(--text-primary);">透明披露</strong>——公布初步归因、承诺技术复盘与 PoR，把不确定性框定在可控范围。现代商业中，危机本身不可免，但<strong style="color:var(--text-primary);">遮掩与沉默才是信用的真正杀手</strong>。</p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">4. “去中心化悖论”对信任模型的冲击</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">本案留下一个反讽：黑客偷走的是 ETH、BTC、USDT、USDC；最终能追回的，<strong style="color:var(--text-primary);">几乎全部来自中心化发行方（Tether/Circle）的一键冻结</strong>。越是去中心化的资产（ETH/BTC），转出后越无人能按下暂停键；越依赖中心化发行方的资产，反而越“安全”。</p>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">对商业的启示：用户追逐“去中心化”的理想，但真到出事时，能兜底的往往是<strong style="color:var(--text-primary);">中心化信任主体</strong>（交易所、发行方、监管、保险）。现代金融的信任，从来是“去中心化理想”与“中心化兜底”的混合体，二者缺一不可。</p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">5. 制度层面的镜鉴</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">传统金融用<strong style="color:var(--text-primary);">存款准备金、存款保险、监管资本充足率</strong>把“个体信用”升级为“系统信用”，正是为了避免单家机构暴雷演变为全行业挤兑。加密行业尚无对等制度，SAFU 仅是平台自设的“迷你保险池”。本案后，行业必然面临更紧迫的命题：<strong style="color:var(--text-primary);">是否需要强制储备证明、第三方托管、类存款保险机制</strong>——把“创始人一句承诺”升级为“制度性信用保障”。</p>
+
+      <h4 style="margin:1.4rem 0 0.7rem;font-size:1.02rem;font-weight:700;color:var(--text-primary);">6. 结论</h4>
+      <p style="margin:0 0 0.9rem;color:var(--text-secondary);line-height:1.9;text-align:justify;">赵长鹏那句“会全部覆盖”，<strong style="color:var(--text-primary);">覆盖得了用户的资金损失，却覆盖不了行业心头的阴影</strong>。它揭示了一个朴素而沉重的商业真理：</p>
+      <p style="margin:0.6rem 0 1rem;padding:0.9rem 1.1rem;background:var(--accent-light);border-left:3px solid var(--accent);border-radius:0.4rem;color:var(--text-primary);line-height:1.9;font-weight:600;">信用是现代商业的隐性资产与最高成本线。赔付是底线，信任是上限；你能赔得起，用户才敢留；你若遮掩一次，市场便不再信你下一次。</p>
+
+      <h4 style="display:flex;align-items:center;gap:0.55rem;margin:1.9rem 0 0.8rem;font-size:1.12rem;font-weight:700;color:var(--text-primary);">
+        <span style="display:inline-flex;align-items:center;justify-content:center;min-width:1.7rem;height:1.7rem;padding:0 0.35rem;border-radius:0.45rem;background:var(--accent-light);color:var(--accent);font-size:0.9rem;">附</span>关键数据速览
+      </h4>
+      <table style="width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:0.88rem;line-height:1.7;">
+        <thead>
+          <tr style="background:var(--accent-light);">
+            <th style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;text-align:left;color:var(--text-primary);font-weight:700;">项目</th>
+            <th style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;text-align:left;color:var(--text-primary);font-weight:700;">数据</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">事件时间</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">2026-10-29 美东深夜 / 10-30 北京时间凌晨</td></tr>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">总影响（币安官方）</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">约 63 亿美元</td></tr>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">链上已冻结</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">约 30 亿美元</td></tr>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">涉及链</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">10 条</td></tr>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">主要流出</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">16.7 万 ETH + 16.15 亿 USDT + 7.67 亿 USDC</td></tr>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">归因（机构口径）</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">朝鲜 Lazarus Group（币安未正式确认）</td></tr>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">市场冲击</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">BTC 跌破 7.9 万、BNB -7%、24h 爆仓超 15 亿美元</td></tr>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">赔付来源</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">SAFU（约 10 亿）+ 币安自有资金</td></tr>
+          <tr><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">历史先例</td><td style="border:1px solid #d8e0d8;padding:0.55rem 0.8rem;color:var(--text-secondary);">2019 币安 7000 BTC；2025 Bybit 14.6 亿美元</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
         <h3 class="section-title" style="font-size:1.6rem;line-height:1.35;margin:0;">特斯拉新Roadster，会飞的车</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);white-space:nowrap;">发布时间：2026-10-16</span>
       </div>
