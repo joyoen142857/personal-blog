@@ -74,6 +74,15 @@
     .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
     .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
     .grain::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1000; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); opacity: 0.02; }
+  /* 文章索引 */
+  .index-note { font-size: 0.8rem; color: var(--text-muted); margin: 0 0 0.5rem; }
+  .index-group-title { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: var(--accent); margin: 1.6rem 0 0.6rem; padding-left: 0.65rem; border-left: 3px solid var(--accent); }
+  .index-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); column-gap: 1.75rem; }
+  .index-link { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; padding: 0.5rem 0; border-bottom: 1px solid var(--accent-light); text-decoration: none; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; transition: color 0.2s; }
+  .index-link:hover { color: var(--accent); }
+  .idx-date { font-size: 0.7rem; color: var(--text-muted); white-space: nowrap; flex-shrink: 0; }
+  #index, article[id^="post-"] { scroll-margin-top: 5.5rem; }
+  @media (max-width: 640px) { .index-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body class="grain">
@@ -81,14 +90,14 @@
     <div class="nav-inner">
       <a href="#home" class="nav-logo">赵鸿燊的博客</a>
       <div class="nav-links">
-        <a href="#home">首页</a><a href="#about">个人简介</a><a href="#work">我的关注</a><a href="#study">我的学习</a><a href="#life">我的成长</a>
+        <a href="#home">首页</a><a href="#about">个人简介</a><a href="#work">我的关注</a><a href="#study">我的学习</a><a href="#life">我的成长</a><a href="#index">文章索引</a>
       </div>
       <button class="nav-menu-btn" id="navMenuBtn" aria-label="菜单">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
     <div class="nav-mobile" id="navMobile">
-      <a href="#home">首页</a><a href="#about">个人简介</a><a href="#work">我的关注</a><a href="#study">我的学习</a><a href="#life">我的成长</a>
+      <a href="#home">首页</a><a href="#about">个人简介</a><a href="#work">我的关注</a><a href="#study">我的学习</a><a href="#life">我的成长</a><a href="#index">文章索引</a>
     </div>
   </nav>
 
@@ -136,7 +145,7 @@
       <h2 class="section-title">我的关注</h2>
     </div>
 
-            <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+            <article id="post-01" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
         <h3 class="section-title" style="font-size:1.6rem;line-height:1.35;margin:0;">SpaceX首次实现“筷子夹飞船”</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);white-space:nowrap;">发布时间：2026-11-15</span>
@@ -152,7 +161,7 @@
       </div>
     </article>
 
-<article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+<article id="post-02" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
         <h3 class="section-title" style="font-size:1.6rem;line-height:1.35;margin:0;">Jensen Huang</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);white-space:nowrap;">发布时间：2026-11-14</span>
@@ -165,7 +174,7 @@
       </div>
     </article>
 
-        <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+        <article id="post-03" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
         <h3 class="section-title" style="font-size:1.6rem;line-height:1.35;margin:0;">乌兰察布——中国的Stargate</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);white-space:nowrap;">发布时间：2026-11-08</span>
@@ -180,7 +189,7 @@
       </div>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-04" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
         <h3 class="section-title" style="font-size:1.6rem;line-height:1.35;margin:0;">币安被盗事件全过程复盘与信用启示</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);white-space:nowrap;">发布时间：2026-10-30</span>
@@ -307,7 +316,7 @@
       </table>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-05" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
         <h3 class="section-title" style="font-size:1.6rem;line-height:1.35;margin:0;">特斯拉新Roadster，会飞的车</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);white-space:nowrap;">发布时间：2026-10-16</span>
@@ -325,7 +334,7 @@
       </div>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-06" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem;">
         <h3 class="section-title" style="font-size:1.6rem;line-height:1.35;margin:0;">万米高空的凡人英雄——9·30 迪拜航空恐怖事件全记录与思考</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);white-space:nowrap;">发布时间：2026-10-03</span>
@@ -382,7 +391,7 @@
       </div>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-07" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">Astra与 Cybercab</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-09-04</span>
@@ -400,7 +409,7 @@
       </div>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-08" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">罗曼太空部署</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-08-31</span>
@@ -415,7 +424,7 @@
       <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;">致敬NASA！致敬马斯克！</p>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-09" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">稳稳落地</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-08-19</span>
@@ -430,7 +439,7 @@
       <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;">虽然与马斯克的SpaceX还有不小差距，但我们一直在努力！加油！</p>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-10" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">长征十号乙</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-07-10</span>
@@ -446,7 +455,7 @@
       <p class="timeline-desc" style="margin-top:0.5rem;color:var(--text-secondary);line-height:1.8;font-style:italic;">我真想快快长大，为祖国的航天事业做点贡献！</p>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-11" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">Elon Musk 2026</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-28</span>
@@ -460,7 +469,7 @@
       <p class="timeline-desc" style="margin-top:1rem;color:var(--text-secondary);line-height:1.8;">Elon Musk 关于 SpaceX 上市和人类文明发展的精彩历程。</p>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-12" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">SpaceX 星舰</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-28</span>
@@ -478,7 +487,7 @@
       <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
       <h2 class="section-title">我的学习</h2>
     </div>
-        <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+        <article id="post-13" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
         <h3 class="section-title" style="font-size:1.5rem;">原创童谣《两只酷小猫》</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-11-08</span>
@@ -551,7 +560,7 @@ Happy little kitties, hooray!
 Meow... meow... meow...      </div>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-14" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">原创歌曲处女作——带我去火星</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-10-05</span>
@@ -571,7 +580,7 @@ Meow... meow... meow...      </div>
         <div style="margin:0.15rem 0;color:var(--text-muted);">尾　句　向着星辰大海——远航</div>
       </div>
     </article>
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-15" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">我的表情包</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-09-19</span>
@@ -582,7 +591,7 @@ Meow... meow... meow...      </div>
         <img src="images/九宫格_动漫版.jpg" alt="动漫版表情包" style="max-width:100%;width:48%;min-width:280px;flex:1;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);"/>
       </div>
     </article>
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-16" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">旺财改图</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-09-06</span>
@@ -592,7 +601,7 @@ Meow... meow... meow...      </div>
         <img src="images/20260906.jpg" alt="旺财改图成果" style="max-width:100%;height:auto;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);"/>
       </div>
     </article>
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-17" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">我的新agent：旺财（WorkBuddy）</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-08-25</span>
@@ -606,7 +615,7 @@ Meow... meow... meow...      </div>
       </div>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-18" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">书架一角</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-08-15</span>
@@ -618,7 +627,7 @@ Meow... meow... meow...      </div>
     </article>
 
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-19" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-07-03</span>
       </div>
@@ -630,7 +639,7 @@ Meow... meow... meow...      </div>
       </div>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-20" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">明天期末考试</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-28</span>
@@ -640,7 +649,7 @@ Meow... meow... meow...      </div>
       </div>
     </article>
     
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-21" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">我的 OpenClaw</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-17</span>
@@ -657,7 +666,7 @@ Meow... meow... meow...      </div>
       <h2 class="section-title">我的成长</h2>
     </div>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-22" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
         <h3 class="section-title" style="font-size:1.5rem;">辛苦的中年人</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-10-23</span>
@@ -675,7 +684,7 @@ Meow... meow... meow...      </div>
       </div>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-23" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">慈母手中线</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-09-25</span>
@@ -694,7 +703,7 @@ Meow... meow... meow...      </div>
       </div>
     </article>
 
-    <article class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
+    <article id="post-24" class="card card-bg animate-on-scroll" style="margin-bottom:2rem;padding:2rem;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;">
         <h3 class="section-title" style="font-size:1.5rem;">最后一代需要找工作的人</h3>
         <span style="font-size:0.75rem;color:var(--text-muted);">发布时间：2026-06-22</span>
@@ -711,6 +720,50 @@ Meow... meow... meow...      </div>
 智能终将会像电力一样廉价，
 但思考和理解永远无法外包！</div>
     </article>
+  </section>
+
+  <section id="index">
+    <div class="section-header animate-on-scroll">
+      <svg class="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="9" y1="6" x2="20" y2="6"/><line x1="9" y1="12" x2="20" y2="12"/><line x1="9" y1="18" x2="20" y2="18"/><line x1="4" y1="6" x2="4.01" y2="6"/><line x1="4" y1="12" x2="4.01" y2="12"/><line x1="4" y1="18" x2="4.01" y2="18"/></svg>
+      <h2 class="section-title">文章索引</h2>
+    </div>
+
+    <div class="animate-on-scroll" style="background:var(--bg-surface);padding:1.75rem;border-radius:0.5rem;">
+      <p class="index-note">共 24 篇文章，按栏目排列，点击标题即可跳转到正文。</p>
+      <div class="index-group-title">我的关注 <span style="font-size:0.75rem;color:var(--text-muted);font-weight:400;">12 篇</span></div>
+      <div class="index-grid">
+        <a class="index-link" href="#post-01"><span>SpaceX首次实现“筷子夹飞船”</span><span class="idx-date">2026-11-15</span></a>
+        <a class="index-link" href="#post-02"><span>Jensen Huang</span><span class="idx-date">2026-11-14</span></a>
+        <a class="index-link" href="#post-03"><span>乌兰察布——中国的Stargate</span><span class="idx-date">2026-11-08</span></a>
+        <a class="index-link" href="#post-04"><span>币安被盗事件全过程复盘与信用启示</span><span class="idx-date">2026-10-30</span></a>
+        <a class="index-link" href="#post-05"><span>特斯拉新Roadster，会飞的车</span><span class="idx-date">2026-10-16</span></a>
+        <a class="index-link" href="#post-06"><span>万米高空的凡人英雄——9·30 迪拜航空恐怖事件全记录与思考</span><span class="idx-date">2026-10-03</span></a>
+        <a class="index-link" href="#post-07"><span>Astra与 Cybercab</span><span class="idx-date">2026-09-04</span></a>
+        <a class="index-link" href="#post-08"><span>罗曼太空部署</span><span class="idx-date">2026-08-31</span></a>
+        <a class="index-link" href="#post-09"><span>稳稳落地</span><span class="idx-date">2026-08-19</span></a>
+        <a class="index-link" href="#post-10"><span>长征十号乙</span><span class="idx-date">2026-07-10</span></a>
+        <a class="index-link" href="#post-11"><span>Elon Musk 2026</span><span class="idx-date">2026-06-28</span></a>
+        <a class="index-link" href="#post-12"><span>SpaceX 星舰</span><span class="idx-date">2026-06-28</span></a>
+      </div>
+      <div class="index-group-title">我的学习 <span style="font-size:0.75rem;color:var(--text-muted);font-weight:400;">9 篇</span></div>
+      <div class="index-grid">
+        <a class="index-link" href="#post-13"><span>原创童谣《两只酷小猫》</span><span class="idx-date">2026-11-08</span></a>
+        <a class="index-link" href="#post-14"><span>原创歌曲处女作——带我去火星</span><span class="idx-date">2026-10-05</span></a>
+        <a class="index-link" href="#post-15"><span>我的表情包</span><span class="idx-date">2026-09-19</span></a>
+        <a class="index-link" href="#post-16"><span>旺财改图</span><span class="idx-date">2026-09-06</span></a>
+        <a class="index-link" href="#post-17"><span>我的新agent：旺财（WorkBuddy）</span><span class="idx-date">2026-08-25</span></a>
+        <a class="index-link" href="#post-18"><span>书架一角</span><span class="idx-date">2026-08-15</span></a>
+        <a class="index-link" href="#post-19"><span>飞速发展的现代科技让我大开眼界，满心……（原文未设标题）</span><span class="idx-date">2026-07-03</span></a>
+        <a class="index-link" href="#post-20"><span>明天期末考试</span><span class="idx-date">2026-06-28</span></a>
+        <a class="index-link" href="#post-21"><span>我的 OpenClaw</span><span class="idx-date">2026-06-17</span></a>
+      </div>
+      <div class="index-group-title">我的成长 <span style="font-size:0.75rem;color:var(--text-muted);font-weight:400;">3 篇</span></div>
+      <div class="index-grid">
+        <a class="index-link" href="#post-22"><span>辛苦的中年人</span><span class="idx-date">2026-10-23</span></a>
+        <a class="index-link" href="#post-23"><span>慈母手中线</span><span class="idx-date">2026-09-25</span></a>
+        <a class="index-link" href="#post-24"><span>最后一代需要找工作的人</span><span class="idx-date">2026-06-22</span></a>
+      </div>
+    </div>
   </section>
 
   <footer class="footer">
